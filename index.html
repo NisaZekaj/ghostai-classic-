@@ -1,106 +1,37 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GhostAI - Die Zukunft der Automatisierung</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>GHOST.AI</h1>
-        <p>Die Zukunft ist jetzt. Automatisiere dein Business, spare Zeit und Kosten.</p>
-    </header>
-
-    <section class="intro">
-        <h2>Was ist GhostAI?</h2>
-        <p>GhostAI ist deine persönliche AI-Lösung, die dir mühsame Aufgaben abnimmt und deine Produktivität revolutioniert.</p>
-    </section>
-
-    <section class="features">
-        <h2>Unsere Funktionen</h2>
-        <ul>
-            <li>Automatische Content-Erstellung für Social Media</li>
-            <li>Intelligenter E-Mail- und Kundenservice-Agent</li>
-            <li>Visuelle AI-Tools für beeindruckende Designs</li>
-            <li>Und vieles mehr in Entwicklung...</li>
-        </ul>
-    </section>
-
-    <section class="call-to-action">
-        <h2>Starte jetzt in die Zukunft!</h2>
-        <a href="https://tally.so/r/3jg9l6" class="cta-button">Jetzt Beratung sichern</a>
-    </section>
-
-    <footer>
-        <p>© 2025 GHOST.AI - Alle Rechte vorbehalten.</p>
-    </footer>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="de">
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GhostAI – Die Zukunft der Automatisierung</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>GHOST.AI</h1>
-    <p>Die Zukunft ist jetzt. Automatisiere dein Business, spare Zeit und Kosten.</p>
-  </header>
+  <div id="loader"></div>
+  <canvas id="background-canvas"></canvas>
 
-  <section class="intro">
-    <h2>Was ist GhostAI?</h2>
-    <p>GhostAI ist deine persönliche AI-Lösung, die dir mühsame Aufgaben abnimmt und deine Produktivität revolutioniert.</p>
-  </section>
-
-  <section class="features">
-    <h2>Unsere Funktionen</h2>
-    <ul>
-      <li>Automatische Content-Erstellung für Social Media</li>
-      <li>Intelligenter E-Mail- und Kundenservice-Agent</li>
-      <li>Visuelle AI-Tools für beeindruckende Designs</li>
-      <li>Und vieles mehr in Entwicklung...</li>
-    </ul>
-  </section>
-
-  <section class="demo">
-    <a href="#demo" class="demo-button">Demo ansehen</a>
-  </section>
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GhostAI – Die Zukunft der Automatisierung</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
   <header class="header">
     <img src="assets/logo.png" alt="GhostAI Logo" class="logo">
     <h1>GHOST.AI</h1>
-    <p class="slogan">Automatisiere deine Zukunft</p>
+    <p class="slogan">Die Zukunft der Automatisierung beginnt hier: Arbeite schneller, automatisiere klüger, gewinne größer.</p>
+
+    <div class="ai-icon">
+      <img src="assets/ai-icon.png" alt="AI Icon">
+    </div>
   </header>
 
   <section class="intro">
     <h2>Was ist GhostAI?</h2>
-    <p>GhostAI ist deine intelligente AI-Lösung, die Aufgaben übernimmt und dein Business revolutioniert.</p>
+    <p>GhostAI ist deine intelligente AI-Lösung, die Aufgaben übernimmt und dein Business revolutioniert – effizienter als je zuvor.</p>
   </section>
 
   <section class="features">
     <h2>Unsere Funktionen</h2>
     <ul>
       <li>Automatische Content-Erstellung für Social Media</li>
-      <li>Intelligente E-Mail- und Kundenservice-Agenten</li>
+      <li>Intelligenter Kundenservice-Agent für E-Mail und Support</li>
       <li>Visuelle AI-Tools für beeindruckende Designs</li>
-      <li>24/7 Assistenz ohne Mitarbeiterkosten</li>
+      <li>24/7 Assistenz – ohne Mitarbeiterkosten</li>
     </ul>
   </section>
 
@@ -108,8 +39,76 @@
     <a href="mailto:info@ghostai.de?subject=GhostAI Beratung" class="cta-button">Jetzt Beratung sichern</a>
   </section>
 
+  <button id="topBtn" title="Nach oben">↑</button>
+
   <footer>
-    <p>© 2025 GHOST.AI - Alle Rechte vorbehalten.</p>
+    <p>© 2025 GHOST.AI – Alle Rechte vorbehalten.</p>
   </footer>
+
+  <!-- Animation Script für Lichter -->
+  <script>
+    const canvas = document.getElementById('background-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    function createParticles() {
+      particles = [];
+      for (let i = 0; i < 80; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          radius: Math.random() * 2,
+          dx: (Math.random() - 0.5) * 0.5,
+          dy: (Math.random() - 0.5) * 0.5
+        });
+      }
+    }
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = 'rgba(138, 43, 226, 0.5)';
+
+      for (let p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if (p.x < 0 || p.x > width) p.dx = -p.dx;
+        if (p.y < 0 || p.y > height) p.dy = -p.dy;
+      }
+    }
+
+    createParticles();
+    setInterval(drawParticles, 30);
+  </script>
+
+  <!-- Script für Back-to-Top Button -->
+  <script>
+    let topBtn = document.getElementById("topBtn");
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        topBtn.style.display = "block";
+      } else {
+        topBtn.style.display = "none";
+      }
+    };
+
+    topBtn.onclick = function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  </script>
+
 </body>
 </html>
