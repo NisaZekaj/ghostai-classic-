@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+header {
+    background-color: #121212;
+    padding: 2rem;
+    text-align: center;
+}
+
+.intro, .features, .call-to-action {
+    padding: 2rem;
+    text-align: center;
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features ul li {
+    background: #1e1e1e;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.call-to-action {
+    background-color: #1a1a1a;
+    margin-top: 2rem;
+}
+
+.cta-button {
+    background-color: gold;
+    color: black;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #121212;
+    font-size: 0.8rem;
+}
