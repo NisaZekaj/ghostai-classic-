@@ -1,106 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000000;
-    color: #ffffff;
-}
-
-header {
-    background-color: #121212;
-    padding: 2rem;
-    text-align: center;
-}
-
-.intro, .features, .call-to-action {
-    padding: 2rem;
-    text-align: center;
-}
-
-.features ul {
-    list-style: none;
-    padding: 0;
-}
-
-.features ul li {
-    background: #1e1e1e;
-    margin: 0.5rem 0;
-    padding: 1rem;
-    border-radius: 5px;
-}
-
-.call-to-action {
-    background-color: #1a1a1a;
-    margin-top: 2rem;
-}
-
-.cta-button {
-    background-color: gold;
-    color: black;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 1rem;
-}
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #121212;
-    font-size: 0.8rem;
-}
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header, section {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-h1, h2 {
-  margin-bottom: 20px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li {
-  margin: 10px 0;
-  background: #1a1a1a;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.demo-button {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 15px 30px;
-  background: linear-gradient(90deg, #ffd700, #b8860b);
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-}
-
-.demo-button:hover {
-  background: linear-gradient(90deg, #b8860b, #ffd700);
-  transform: scale(1.05);
-  color: #000;
-}
-
-
-body {
-  background-color: #0a0a0a;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
@@ -117,18 +16,19 @@ body {
 .logo {
   width: 100px;
   margin-bottom: 10px;
+  animation: fadeInLogo 2s ease-in-out, logoGlow 5s infinite alternate;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin: 10px 0;
 }
 
 .slogan {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-style: italic;
   color: #ffd700;
-  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 section {
@@ -143,7 +43,7 @@ section {
 }
 
 .features ul li {
-  background: #1a1a1a;
+  background: rgba(255, 215, 0, 0.05);
   margin: 10px auto;
   padding: 15px;
   width: 90%;
@@ -185,4 +85,83 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes fadeInLogo {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Logo Glow */
+@keyframes logoGlow {
+  from {
+    filter: drop-shadow(0 0 5px #6a00ff) drop-shadow(0 0 10px #8c00ff);
+  }
+  to {
+    filter: drop-shadow(0 0 10px #ffd700) drop-shadow(0 0 20px #6a00ff);
+  }
+}
+
+/* Loader oben */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6a00ff, #ffd700);
+  z-index: 9999;
+  animation: load 2s forwards;
+}
+
+@keyframes load {
+  to {
+    width: 100%;
+  }
+}
+
+/* Background Canvas */
+#background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #0a0a0a;
+}
+
+/* AI Icon */
+.ai-icon img {
+  width: 60px;
+  margin-top: 20px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.ai-icon img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
+}
+
+/* Back to Top Button */
+#topBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  border: none;
+  outline: none;
+  background: linear-gradient(90deg, #6a00ff, #ffd700);
+  color: white;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+#topBtn:hover {
+  background: #ffd700;
+  color: #0a0a0a;
 }
