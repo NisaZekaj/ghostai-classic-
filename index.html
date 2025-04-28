@@ -1,114 +1,200 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GhostAI – Die Zukunft der Automatisierung</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div id="loader"></div>
-  <canvas id="background-canvas"></canvas>
-
-  <header class="header">
-    <img src="assets/logo.png" alt="GhostAI Logo" class="logo">
-    <h1>GHOST.AI</h1>
-    <p class="slogan">Die Zukunft der Automatisierung beginnt hier: Arbeite schneller, automatisiere klüger, gewinne größer.</p>
-
-    <div class="ai-icon">
-      <img src="assets/ai-icon.png" alt="AI Icon">
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <!-- Logo mit dezentem Glow-Effekt -->
+        <!-- Wenn ein Logo-Bild vorhanden ist, hier z.B. <img src="logo.png" alt="GhostAI Logo"> einfügen -->
+        <h1>GHOST.AI</h1>
+      </div>
+      <nav class="navbar">
+        <ul class="menu">
+          <li><a href="#intro">Home</a></li>
+          <li><a href="#features">Vorteile</a></li>
+          <li><a href="#pricing">Preise</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#testimonials">Kundenstimmen</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
 
-  <section class="intro">
-    <h2>Was ist GhostAI?</h2>
-    <p>GhostAI ist deine intelligente AI-Lösung, die Aufgaben übernimmt und dein Business revolutioniert – effizienter als je zuvor.</p>
-  </section>
-
-  <section class="features">
-    <h2>Unsere Funktionen</h2>
+  <!-- Mobile Menü (Hamburger) -->
+  <div class="mobile-menu">
     <ul>
-      <li>Automatische Content-Erstellung für Social Media</li>
-      <li>Intelligenter Kundenservice-Agent für E-Mail und Support</li>
-      <li>Visuelle AI-Tools für beeindruckende Designs</li>
-      <li>24/7 Assistenz – ohne Mitarbeiterkosten</li>
+      <li><a href="#intro">Home</a></li>
+      <li><a href="#features">Vorteile</a></li>
+      <li><a href="#pricing">Preise</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#testimonials">Kundenstimmen</a></li>
+      <li><a href="#cta">Jetzt starten</a></li>
     </ul>
+  </div>
+
+  <!-- Intro Sektion -->
+  <section id="intro" class="intro-section">
+    <div class="container intro-content">
+      <h2 class="slogan">Die Zukunft ist jetzt.</h2>
+      <p class="tagline">Automatisiere dein Business, spare Zeit und Kosten.</p>
+      <a href="#cta" class="btn-cta">Jetzt starten</a>
+    </div>
   </section>
 
-  <section class="cta">
-    <a href="mailto:info@ghostai.de?subject=GhostAI Beratung" class="cta-button">Jetzt Beratung sichern</a>
+  <!-- Vorteilsbereich / Features -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <h2>Was ist GhostAI?</h2>
+      <p class="section-subtitle">GhostAI ist deine persönliche KI-Lösung, die dir mühsame Aufgaben abnimmt und deine Produktivität revolutioniert.</p>
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🚀</div>
+          <h3>Automatische Content-Erstellung</h3>
+          <p>Erstelle mühelos Social Media Inhalte mit KI-Unterstützung.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🤖</div>
+          <h3>Intelligenter Kundenservice-Agent</h3>
+          <p>Beantworte Kundenanfragen automatisch – 24/7.</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <h3>Maximale Effizienz</h3>
+          <p>Spare Zeit und fokussiere dich auf das Wesentliche.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <button id="topBtn" title="Nach oben">↑</button>
+  <!-- Pakete & Preise -->
+  <section id="pricing" class="pricing-section">
+    <div class="container">
+      <h2>Pakete & Preise</h2>
+      <div class="pricing-plans">
+        <div class="plan">
+          <h3>Basic</h3>
+          <p class="price">49€<span>/Monat</span></p>
+          <ul>
+            <li>Automatisierte Inhalte</li>
+            <li>Standard KI-Tools</li>
+            <li>Basis Support</li>
+          </ul>
+          <a href="#" class="btn-plan">Wählen</a>
+        </div>
+        <div class="plan">
+          <h3>Pro</h3>
+          <p class="price">99€<span>/Monat</span></p>
+          <ul>
+            <li>Alle Basic-Funktionen</li>
+            <li>Erweiterte KI-Tools</li>
+            <li>Priorisierter Support</li>
+          </ul>
+          <a href="#" class="btn-plan">Wählen</a>
+        </div>
+        <div class="plan">
+          <h3>Enterprise</h3>
+          <p class="price">199€<span>/Monat</span></p>
+          <ul>
+            <li>Alle Pro-Funktionen</li>
+            <li>Individuelle Lösungen</li>
+            <li>Dedizierter Support</li>
+          </ul>
+          <a href="#" class="btn-plan">Wählen</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- FAQ Bereich -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <h2>Häufige Fragen</h2>
+      <div class="faq-item">
+        <h3 class="faq-question">Was ist GhostAI?</h3>
+        <div class="faq-answer">
+          <p>GhostAI ist eine KI-Lösung, die für dich Routineaufgaben übernimmt, damit du dich auf dein Kerngeschäft konzentrieren kannst.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">Wie kann GhostAI meinem Business helfen?</h3>
+        <div class="faq-answer">
+          <p>GhostAI automatisiert Content-Erstellung, Kundenservice und mehr – so sparst du Zeit und Kosten.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">Wie starte ich mit GhostAI?</h3>
+        <div class="faq-answer">
+          <p>Melde dich einfach an und wähle das passende Paket. Unser Team hilft dir beim Onboarding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kundenbewertungen / Testimonials -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <h2>Kundenbewertungen</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p class="testimonial-text">"GhostAI hat mein Unternehmen transformiert. Ich spare täglich Stunden an Arbeit!"</p>
+          <p class="author">– Max Mustermann, Unternehmer</p>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-text">"Dank GhostAI konnte ich mich auf das Wachstum meiner Firma konzentrieren."</p>
+          <p class="author">– Erika Beispiel, Gründerin</p>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial-text">"Einfach zu bedienen und unglaublich effektiv – absolut empfehlenswert!"</p>
+          <p class="author">– John Doe, Freelancer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call-to-Action Bereich -->
+  <section id="cta" class="cta-section">
+    <div class="container cta-content">
+      <h2>Bereit für die Zukunft?</h2>
+      <p>Starte jetzt mit GhostAI und hebe dein Business auf das nächste Level.</p>
+      <a href="#" class="btn-cta">Jetzt starten</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 GHOST.AI – Alle Rechte vorbehalten.</p>
+    <div class="container footer-content">
+      <p>&copy; 2025 GHOST.AI – Alle Rechte vorbehalten.</p>
+      <p><a href="#">Impressum</a> | <a href="#">Datenschutz</a> | <a href="#">Über uns</a></p>
+    </div>
   </footer>
 
-  <!-- Animation Script für Lichter -->
+  <!-- Interaktive Scripts für Menü und FAQ -->
   <script>
-    const canvas = document.getElementById('background-canvas');
-    const ctx = canvas.getContext('2d');
-    let width, height;
-    let particles = [];
-
-    function resize() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    }
-
-    window.addEventListener('resize', resize);
-    resize();
-
-    function createParticles() {
-      particles = [];
-      for (let i = 0; i < 80; i++) {
-        particles.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          radius: Math.random() * 2,
-          dx: (Math.random() - 0.5) * 0.5,
-          dy: (Math.random() - 0.5) * 0.5
-        });
-      }
-    }
-
-    function drawParticles() {
-      ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = 'rgba(138, 43, 226, 0.5)';
-
-      for (let p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if (p.x < 0 || p.x > width) p.dx = -p.dx;
-        if (p.y < 0 || p.y > height) p.dy = -p.dy;
-      }
-    }
-
-    createParticles();
-    setInterval(drawParticles, 30);
+    // Hamburger-Menü Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+    // FAQ Akkordeon Toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('open');
+      });
+    });
   </script>
-
-  <!-- Script für Back-to-Top Button -->
-  <script>
-    let topBtn = document.getElementById("topBtn");
-
-    window.onscroll = function() {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        topBtn.style.display = "block";
-      } else {
-        topBtn.style.display = "none";
-      }
-    };
-
-    topBtn.onclick = function() {
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-  </script>
-
 </body>
 </html>
