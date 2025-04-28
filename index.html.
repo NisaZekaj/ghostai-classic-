@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GhostAI - Die Zukunft der Automatisierung</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>GHOST.AI</h1>
+        <p>Die Zukunft ist jetzt. Automatisiere dein Business, spare Zeit und Kosten.</p>
+    </header>
+
+    <section class="intro">
+        <h2>Was ist GhostAI?</h2>
+        <p>GhostAI ist deine persönliche AI-Lösung, die dir mühsame Aufgaben abnimmt und deine Produktivität revolutioniert.</p>
+    </section>
+
+    <section class="features">
+        <h2>Unsere Funktionen</h2>
+        <ul>
+            <li>Automatische Content-Erstellung für Social Media</li>
+            <li>Intelligenter E-Mail- und Kundenservice-Agent</li>
+            <li>Visuelle AI-Tools für beeindruckende Designs</li>
+            <li>Und vieles mehr in Entwicklung...</li>
+        </ul>
+    </section>
+
+    <section class="call-to-action">
+        <h2>Starte jetzt in die Zukunft!</h2>
+        <a href="https://tally.so/r/3jg9l6" class="cta-button">Jetzt Beratung sichern</a>
+    </section>
+
+    <footer>
+        <p>© 2025 GHOST.AI - Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
