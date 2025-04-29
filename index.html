@@ -1,93 +1,125 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ghost.AI – Die Zukunft beginnt hier</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghost.AI - Die Zukunft beginnt hier</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
+  <header>
+    <div class="logo"> 
+      <img src="LOGO_LINK_HIER" alt="GhostAI Logo" />
+      <h1>Ghost.AI</h1>
+      <p class="slogan">Die Zukunft der Automatisierung beginnt hier.</p>
+    </div>
+    <nav>
+      <div class="burger">&#9776;</div>
+      <ul class="nav-links">
+        <li><a href="#produkte">Produkte</a></li>
+        <li><a href="#funktionen">Funktionen</a></li>
+        <li><a href="#pakete">Pakete</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="progress-bar"></div>
+  </header>
 
-<header class="header">
-  <div class="logo">GHOST.AI</div>
-  <nav class="nav">
-    <ul>
-      <li><a href="#produkte">Produkte</a></li>
-      <li><a href="#pakete">Pakete</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
-  </nav>
-</header>
+  <section class="hero">
+    <h2 class="animated">Willkommen bei Ghost.AI</h2>
+    <p class="animated">Erlebe die Macht intelligenter Automatisierung.</p>
+    <a href="#pakete" class="cta-button">Jetzt starten</a>
+  </section>
 
-<section class="hero">
-  <h1>Willkommen bei GHOST.AI</h1>
-  <p>Die Zukunft der Automatisierung beginnt hier.</p>
-  <a href="#pakete" class="btn">Jetzt starten</a>
-</section>
+  <section id="funktionen" class="funktionen">
+    <h2>Unsere Funktionen</h2>
+    <div class="funktionen-grid">
+      <div class="funktion">
+        <img src="ICON1" alt="Icon 1">
+        <h3>Automatische Content-Erstellung</h3>
+        <p>Erstelle hochwertige Inhalte in Sekunden.</p>
+      </div>
+      <div class="funktion">
+        <img src="ICON2" alt="Icon 2">
+        <h3>Intelligenter Kundenservice-Agent</h3>
+        <p>Antwortet auf Kundenanfragen 24/7.</p>
+      </div>
+      <div class="funktion">
+        <img src="ICON3" alt="Icon 3">
+        <h3>Maximale Effizienz</h3>
+        <p>Reduziere manuelle Arbeit auf ein Minimum.</p>
+      </div>
+      <div class="funktion">
+        <img src="ICON4" alt="Icon 4">
+        <h3>Erweiterte KI-Tools</h3>
+        <p>Für Marketing, Kundenservice und Business-Automatisierung.</p>
+      </div>
+    </div>
+  </section>
 
-<section class="produkte" id="produkte">
-  <h2>Unsere digitalen Produkte</h2>
-  <div class="produkt-grid">
-    <div class="produkt">
-      <div class="icon">📝</div>
-      <h3>GhostWriter AI</h3>
-      <p>Dein smarter Content-Generator für Texte, Ideen und Vorlagen auf Knopfdruck.</p>
+  <section id="pakete" class="pakete">
+    <h2>Unsere Pakete</h2>
+    <div class="pakete-grid">
+      <div class="paket">
+        <h3>Starter</h3>
+        <p>Einsteigerfunktionen für kleine Teams</p>
+        <span>29€ / Monat</span>
+        <a href="#kontakt" class="paket-btn">Jetzt sichern</a>
+      </div>
+      <div class="paket">
+        <h3>Profi</h3>
+        <p>Erweiterte Tools für wachsende Unternehmen</p>
+        <span>79€ / Monat</span>
+        <a href="#kontakt" class="paket-btn">Jetzt sichern</a>
+      </div>
+      <div class="paket">
+        <h3>Elite</h3>
+        <p>Vollautomatisierung & Premium Support</p>
+        <span>149€ / Monat</span>
+        <a href="#kontakt" class="paket-btn">Jetzt sichern</a>
+      </div>
     </div>
-    <div class="produkt">
-      <div class="icon">✉️</div>
-      <h3>GhostMail AI</h3>
-      <p>Automatisierte E-Mail-Antworten, schnell und professionell.</p>
-    </div>
-    <div class="produkt">
-      <div class="icon">🎥</div>
-      <h3>GhostContent AI</h3>
-      <p>Erstelle virale Social Media Inhalte und Reels-Ideen auf Autopilot.</p>
-    </div>
-    <div class="produkt">
-      <div class="icon">⚙️</div>
-      <h3>GhostAutomation AI</h3>
-      <p>Deine persönliche AI für Aufgaben- und Dokumenten-Automatisierung.</p>
-    </div>
-    <div class="produkt">
-      <div class="icon">🎨</div>
-      <h3>GhostCreator AI</h3>
-      <p>Grafiken und Visuals auf AI-Basis für Branding und Werbung.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="pakete" id="pakete">
-  <h2>Unsere Pakete</h2>
-  <div class="paket-grid">
-    <div class="paket">
-      <h3>Starter</h3>
-      <p>Für Einsteiger und kleine Projekte.</p>
-      <span>299 €</span>
+  <section id="faq" class="faq">
+    <h2>Häufige Fragen</h2>
+    <div class="faq-item">
+      <h4>Was ist Ghost.AI?</h4>
+      <p>Ghost.AI ist deine Automatisierungsplattform für moderne Unternehmen.</p>
     </div>
-    <div class="paket bestseller">
-      <h3>Profi</h3>
-      <p>Ideal für wachsende Unternehmen.</p>
-      <span>599 €</span>
+    <div class="faq-item">
+      <h4>Wie schnell kann ich starten?</h4>
+      <p>Innerhalb weniger Minuten nach der Anmeldung.</p>
     </div>
-    <div class="paket">
-      <h3>Elite</h3>
-      <p>Maximale Leistung für Skalierer.</p>
-      <span>999 €</span>
+    <div class="faq-item">
+      <h4>Wie funktioniert der Support?</h4>
+      <p>Unsere KI und unser Team unterstützen dich rund um die Uhr.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="footer" id="kontakt">
-  <p>© 2025 GHOST.AI – Die Zukunft gehört denen, die sie selbst erschaffen.</p>
-  <ul>
-    <li><a href="#">Impressum</a></li>
-    <li><a href="#">Datenschutz</a></li>
-    <li><a href="#">AGB</a></li>
-  </ul>
-</footer>
+  <section class="bewertungen">
+    <h2>Was unsere Kunden sagen</h2>
+    <div class="testimonial">
+      <p>"Ghost.AI hat meinen Workflow komplett revolutioniert."</p>
+      <span>- Marco B.</span>
+    </div>
+    <div class="testimonial">
+      <p>"Endlich eine Plattform, die wirklich Arbeit abnimmt."</p>
+      <span>- Jana K.</span>
+    </div>
+  </section>
 
-<a href="#" class="scroll-to-top">⬆️</a>
-
-<script src="script.js"></script>
+  <footer id="kontakt">
+    <p>&copy; 2025 Ghost.AI | info@ghostai.de</p>
+    <div class="footer-links">
+      <a href="#">Impressum</a> |
+      <a href="#">Datenschutz</a> |
+      <a href="#">AGB</a>
+    </div>
+    <p class="slogan-footer">Die Zukunft der Automatisierung beginnt hier.</p>
+    <div class="scroll-top">&#8679;</div>
+  </footer>
 </body>
 </html>
