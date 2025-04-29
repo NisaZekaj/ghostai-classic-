@@ -42,10 +42,67 @@ nav ul li a {
   font-weight: bold;
 }
 
+/* Hero Redesign */
 .hero {
+  position: relative;
+  height: 100vh;
+  background: url('dein-hintergrundbild.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding-top: 160px;
-  background: radial-gradient(circle, rgba(255,215,0,0.05) 0%, #0c0c0c 100%);
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-logo {
+  width: 120px;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 42px;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero .gold {
+  color: #FFD700;
+}
+
+.subheadline {
+  font-size: 18px;
+  color: #bbb;
+  margin-bottom: 40px;
+}
+
+.cta-button {
+  background-color: #FFD700;
+  color: #000;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e6c200;
 }
 
 .hero h1 {
