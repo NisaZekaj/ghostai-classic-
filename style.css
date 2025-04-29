@@ -1,215 +1,101 @@
-/* Grundlegendes Layout und Schriftarten */
-body {
+* {
     margin: 0;
-    font-family: 'Satoshi', sans-serif;
-    background-color: #000;
-    color: #fff;
-    scroll-behavior: smooth;
-    background-image: radial-gradient(#222 1px, transparent 1px);
-    background-size: 20px 20px;
+    padding: 0;
+    box-sizing: border-box;
 }
-
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #0e0e0e, #1a1a1a);
+    color: #fff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
 header {
-    background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
-    padding: 1rem 2rem;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    border-bottom: 4px solid #FFD700;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #000;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-}
-
 .logo img {
     height: 40px;
+    margin-right: 10px;
 }
-
 nav a {
-    color: white;
+    margin-left: 20px;
+    color: gold;
     text-decoration: none;
-    margin: 0 1rem;
-    transition: color 0.3s;
+    font-weight: 600;
 }
-
-nav a:hover {
-    color: #FFD700;
-}
-
 .hero {
     text-align: center;
-    padding: 5rem 1rem;
-    background: #000;
+    padding: 100px 10% 60px;
+    background: url('assets/hero-bg.gif') center/cover no-repeat;
 }
-
 .hero h1 {
-    font-size: 3rem;
-    background: linear-gradient(to right, #FFD700, #FF8C00, #DA70D6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-}
-
-button.cta {
-    background-color: #FFD700;
-    color: #000;
-    padding: 0.75rem 2rem;
-    border: none;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-button.cta:hover {
-    background-color: #fff;
-    color: #000;
-}
-
-section {
-    padding: 4rem 2rem;
-}
-
-h2 {
-    text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 2rem;
-    background: linear-gradient(to right, #FFD700, #FF8C00, #DA70D6);
+    margin-bottom: 20px;
+    background: linear-gradient(to right, gold, white);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
-
-/* Feature Cards */
-.feature-card {
-    background-color: #111;
-    padding: 2rem;
-    border-radius: 12px;
-    margin: 1rem auto;
-    max-width: 700px;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
-}
-
-.feature-card h3 {
-    color: #FFD700;
-}
-
-/* Produkte */
-.produkte ul {
-    list-style: square;
-    padding-left: 2rem;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* Pakete */
-.pakete {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.paket {
-    background-color: #111;
-    padding: 2rem;
-    border-radius: 16px;
-    text-align: center;
-    width: 300px;
-    box-shadow: 0 0 12px rgba(255, 215, 0, 0.2);
-    transition: transform 0.3s;
-}
-
-.paket:hover {
-    transform: scale(1.05);
-}
-
-.paket-button {
-    display: inline-block;
-    margin-top: 1rem;
-    background: #FFD700;
-    color: #000;
-    padding: 0.5rem 1.5rem;
-    border-radius: 30px;
+.cta-button {
+    background-color: gold;
+    color: black;
+    padding: 12px 24px;
     font-weight: bold;
     text-decoration: none;
+    border-radius: 30px;
 }
-
-/* FAQ */
-.faq-item {
-    background: #111;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border-left: 4px solid #FFD700;
-    border-radius: 8px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+section {
+    padding: 60px 10%;
 }
-
-.faq-item h4 {
-    margin: 0 0 0.5rem 0;
-    color: #FFD700;
+.features-grid, .produkte-list, .pakete-grid, .faq-grid, .testimonial-grid {
+    display: grid;
+    gap: 20px;
 }
-
-/* Bewertungen */
-.bewertungen blockquote {
-    background: #222;
-    padding: 1.5rem;
-    border-left: 6px solid #FFD700;
-    margin: 1.5rem auto;
-    max-width: 700px;
-    font-style: italic;
-    border-radius: 8px;
+.features-grid, .pakete-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
-
-/* Footer */
+.feature, .produkt-box, .paket, .faq-item, .testimonial {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.feature:hover, .paket:hover {
+    transform: scale(1.03);
+}
+.paket ul {
+    margin: 10px 0;
+}
+.paket .preis {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: gold;
+}
 footer {
     text-align: center;
-    padding: 2rem;
-    font-size: 0.9rem;
+    padding: 30px 10%;
+    background-color: #000;
     color: #aaa;
-    border-top: 1px solid #333;
 }
-
-footer a {
-    color: #FFD700;
-    margin: 0 0.5rem;
-    text-decoration: none;
+.footer-links a {
+    color: #aaa;
+    margin: 0 10px;
 }
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Scroll-up Button */
-.scroll-top {
+.scroll-to-top {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #FFD700;
-    color: black;
+    bottom: 20px;
+    right: 20px;
+    background: gold;
+    color: #000;
+    padding: 8px 12px;
     border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
     text-decoration: none;
-    box-shadow: 0 0 10px #FFD700;
+    font-weight: bold;
 }
