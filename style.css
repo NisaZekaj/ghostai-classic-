@@ -196,6 +196,47 @@ nav ul li a {
   background-color: #111;
 }
 
+.features {
+  background-color: #0c0c0c;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.feature-box {
+  background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+  border-radius: 15px;
+  padding: 30px 20px;
+  color: #fff;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+}
+
+.feature-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.feature-box h3 {
+  font-size: 20px;
+  color: #FFD700;
+  margin-bottom: 10px;
+}
+
+.feature-box p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.feature-icon {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
