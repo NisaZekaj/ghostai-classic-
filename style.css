@@ -192,6 +192,77 @@ nav ul li a {
   background-color: #e6c200;
 }
 
+.produkte {
+  background-color: #111;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.produkte-title {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 60px;
+}
+
+.produkt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.produkt-box {
+  background: linear-gradient(145deg, #1b1b1b, #0d0d0d);
+  border-radius: 15px;
+  padding: 30px 25px;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.produkt-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.produkt-box h3 {
+  color: #FFD700;
+  margin-bottom: 10px;
+}
+
+.produkt-sub {
+  font-size: 15px;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.produkt-box ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.produkt-box li {
+  color: #bbb;
+  font-size: 14px;
+  margin-bottom: 8px;
+  list-style: disc;
+}
+
+.produkt-emotion {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.produkt-btn {
+  background-color: #FFD700;
+  color: #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
 .features {
   background-color: #111;
 }
