@@ -72,7 +72,69 @@ nav ul li a {
   width: 120px;
   margin-bottom: 30px;
 }
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: radial-gradient(circle at center, rgba(255,215,0,0.05) 0%, #0a0a0a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 0 20px;
+}
 
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-icon {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.ghost-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.ghost-title .gold {
+  color: #FFD700;
+}
+
+.subheadline {
+  font-size: 18px;
+  color: #bbb;
+  margin-bottom: 40px;
+}
+
+.cta-button {
+  background-color: #FFD700;
+  color: #000;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e6c200;
+}
 .hero h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 42px;
