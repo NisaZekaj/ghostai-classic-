@@ -489,3 +489,59 @@ a {
     border-bottom: 1px solid #333;
   }
 }
+/* === HERO SECTION MIT BOT === */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.05) 0%, #0a0a0a 100%);
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.hero h1 .gold {
+  color: #FFD700;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-bottom: 30px;
+}
+
+  .bot-image {
+  background-image: url('https://erepublic.brightspotcdn.com/dims4/default/770db0b/2147483647/strip/true/crop/940x490+0+70/resize/840x438!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F39%2F30%2F39f6bdf361c3c6d991ccb20a8241%2Fchatbots.jpg');
+}
+}
+
+/* Schwebende Animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  font-size: 1rem;
+  color: #FFD700;
+  animation: bounce 2s infinite;
+}
+
+/* Scroll-Pfeil animieren */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
