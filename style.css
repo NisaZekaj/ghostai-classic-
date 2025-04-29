@@ -201,3 +201,216 @@ footer {
   cursor: pointer;
   display: none;
 }
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #000000 0%, #0f0f0f 100%);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(#ffd70033 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0; width: 100%; z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.nav-toggle span {
+  background: #ffd700;
+  margin: 4px 0;
+  height: 3px;
+  width: 25px;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 60px; right: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+}
+
+.section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #ffd700, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.features-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInCard 1s ease forwards;
+}
+.feature-card:nth-child(1) { animation-delay: 0.2s; }
+.feature-card:nth-child(2) { animation-delay: 0.4s; }
+.feature-card:nth-child(3) { animation-delay: 0.6s; }
+.feature-card:nth-child(4) { animation-delay: 0.8s; }
+
+.feature-card h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #ffd700;
+}
+.feature-card p {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+.hero-content {
+  text-align: center;
+  padding: 120px 20px 100px;
+  animation: fadeInDown 1.2s ease-out;
+}
+.hero-content h1 {
+  font-size: 3rem;
+}
+.hero-content h1 span {
+  background: linear-gradient(90deg, #ffd700, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta-button {
+  background-color: #ffd700;
+  color: #000;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.cta-button:hover {
+  background-color: #e6c200;
+}
+
+.testimonial {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 20px;
+  border-radius: 10px;
+  font-style: italic;
+  color: #ccc;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffd700;
+  color: #000;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 9999;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ffd700, #8a2be2);
+  width: 0;
+  z-index: 10000;
+}
+
+.symbol-animation {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background: url('ghost-symbol.svg') no-repeat center center / contain;
+  animation: rotate 10s linear infinite;
+  z-index: 10;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInCard {
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
