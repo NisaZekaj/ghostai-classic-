@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
-<!-- Navigation -->
+
 <!-- Navigation -->
 <header class="header">
   <div class="container nav-container">
@@ -23,9 +23,15 @@
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
-    
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 </header>
-<!-- Hero mit zentriertem Logo -->
+
+<!-- Hero -->
 <section class="hero" id="start">
   <div class="hero-overlay"></div>
   <div class="hero-content" data-aos="fade-up">
@@ -64,7 +70,7 @@
   </div>
 </section>
 
-<!-- Produktpakete -->
+<!-- Pakete -->
 <section class="pakete" id="pakete">
   <div class="container" data-aos="fade-up">
     <h2 class="pakete-title">Unsere Pakete</h2>
@@ -91,58 +97,12 @@
   </div>
 </section>
 
-<!-- Tools/Produkte -->
+<!-- Produkte -->
 <section class="produkte" id="produkte">
   <div class="container">
     <h2 class="produkte-title">Unsere Tools & KI-Lösungen</h2>
     <div class="produkt-grid">
-      <div class="produkt-box" data-aos="fade-up">
-        <h3>GhostWriter AI</h3>
-        <p class="produkt-sub">Texte, Skripte & Posts in Sekunden</p>
-        <ul>
-          <li>Für Social Media & Sales</li>
-          <li>Jede Sprache, jeder Stil</li>
-          <li>PDFs, Mailings oder Reels-Texte</li>
-        </ul>
-        <p class="produkt-emotion">Du gibst das Thema ein – GhostWriter liefert in Sekunden Content, der wirkt.</p>
-        <a href="#" class="produkt-btn">Jetzt testen</a>
-      </div>
-
-      <div class="produkt-box" data-aos="fade-up" data-aos-delay="100">
-        <h3>SupportBot AI</h3>
-        <p class="produkt-sub">24/7 Kundenservice – automatisiert</p>
-        <ul>
-          <li>Antwortet sofort</li>
-          <li>Reduziert Support-Team</li>
-          <li>Immer verfügbar</li>
-        </ul>
-        <p class="produkt-emotion">Auch nachts oder sonntags – dein AI-Agent hilft sofort weiter.</p>
-        <a href="#" class="produkt-btn">Mehr erfahren</a>
-      </div>
-
-      <div class="produkt-box" data-aos="fade-up" data-aos-delay="200">
-        <h3>FunnelBuilder AI</h3>
-        <p class="produkt-sub">Erstelle KI-Verkaufstrichter</p>
-        <ul>
-          <li>Landingpages + Texte automatisch</li>
-          <li>Conversion-optimiert</li>
-          <li>Integrierbar mit Mail-Tools</li>
-        </ul>
-        <p class="produkt-emotion">Bau dir deinen Funnel in Minuten – so einfach war Marketing nie.</p>
-        <a href="#" class="produkt-btn">Jetzt starten</a>
-      </div>
-
-      <div class="produkt-box" data-aos="fade-up" data-aos-delay="300">
-        <h3>PDF Maker AI</h3>
-        <p class="produkt-sub">E-Books & Lead-Magnete</p>
-        <ul>
-          <li>Design & Inhalte automatisch</li>
-          <li>Export als PDF oder Canva-Datei</li>
-          <li>Bereit zum Verkauf</li>
-        </ul>
-        <p class="produkt-emotion">Dein Know-how wird zum fertigen Produkt – professionell & schön.</p>
-        <a href="#" class="produkt-btn">PDF erstellen</a>
-      </div>
+      <!-- Produktkarten hier ... (kannst du unverändert lassen) -->
     </div>
   </div>
 </section>
@@ -151,22 +111,7 @@
 <section class="faq" id="faq">
   <div class="container" data-aos="fade-up">
     <h2 class="faq-title">Häufige Fragen</h2>
-    <div class="faq-box" onclick="toggleFAQ(this)">
-      <h4>Wie funktioniert Ghost.AI?</h4>
-      <p class="faq-content">Ghost.AI nutzt KI, um Content zu generieren, Kundenanfragen zu beantworten und Prozesse zu automatisieren.</p>
-    </div>
-    <div class="faq-box" onclick="toggleFAQ(this)">
-      <h4>Für wen ist Ghost.AI geeignet?</h4>
-      <p class="faq-content">Für Selbstständige, Agenturen und Unternehmen, die smarter skalieren wollen.</p>
-    </div>
-    <div class="faq-box" onclick="toggleFAQ(this)">
-      <h4>Kann ich es kostenlos testen?</h4>
-      <p class="faq-content">Ja! 7 Tage Testzugang im Starter-Paket.</p>
-    </div>
-    <div class="faq-box" onclick="toggleFAQ(this)">
-      <h4>Welche Zahlungsmethoden gibt es?</h4>
-      <p class="faq-content">PayPal, Kreditkarte oder direkt über Gumroad.</p>
-    </div>
+    <!-- FAQ-Boxen hier ... -->
   </div>
 </section>
 
@@ -182,8 +127,11 @@
   </div>
 </footer>
 
-<!-- JS -->
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
+  AOS.init();
+
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('navLinks');
 
@@ -192,13 +140,16 @@
     menuToggle.classList.toggle('open');
   });
 
-  // Menü automatisch schließen beim Link-Klick (optional)
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
       menuToggle.classList.remove('open');
     });
   });
+
+  function toggleFAQ(el) {
+    el.classList.toggle("open");
+  }
 </script>
 
 </body>
