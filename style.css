@@ -520,11 +520,18 @@ a {
   margin-bottom: 30px;
 }
 
-  .bot-image {
-  background-image: url('https://erepublic.brightspotcdn.com/dims4/default/770db0b/2147483647/strip/true/crop/940x490+0+70/resize/840x438!/quality/90/?url=http%3A%2F%2Ferepublic-brightspot.s3.us-west-2.amazonaws.com%2F39%2F30%2F39f6bdf361c3c6d991ccb20a8241%2Fchatbots.jpg');
+.bot-image {
+  width: 220px;
+  height: 220px;
+  background-image: url('https://ghostai-world.cdn.openai.com/bot.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
 }
-}
-
 /* Schwebende Animation */
 @keyframes float {
   0% { transform: translateY(0); }
