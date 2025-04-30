@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghost.MarketingBot</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #FFD700;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .subheadline {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #1a1a1a;
+      color: #fff;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #FFD700;
+      color: #000;
+      font-weight: bold;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .output {
+      margin-top: 20px;
+      background-color: #222;
+      padding: 15px;
+      border-radius: 5px;
+      border: 1px solid #333;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ghost.MarketingBot</h1>
+  <p class="subheadline">Dein KI-Verkäufer für automatisches Marketing</p>
+
+  <div class="container">
+    <label for="zielgruppe">Zielgruppe:</label>
+    <input type="text" id="zielgruppe" placeholder="z. B. Coaches, Agenturen …" />
+
+    <label for="nutzen">Was bringt Ghost.AI ihnen?</label>
+    <textarea id="nutzen" rows="4" placeholder="z. B. automatisierter Content, weniger Support …"></textarea>
+
+    <button onclick="generateMessage()">Nachricht generieren</button>
+
+    <div class="output" id="output">(Hier erscheint deine Outreach-Nachricht)</div>
+  </div>
+
+  <script>
+    function generateMessage() {
+      const ziel = document.getElementById("zielgruppe").value;
+      const nutzen = document.getElementById("nutzen").value;
+      const output = document.getElementById("output");
+      const text = `Hey! Ich hab gesehen, dass du im Bereich ${ziel} aktiv bist.\n\nIch arbeite mit einer KI-Lösung namens GHOST.AI – sie kann dir helfen, ${nutzen}, vollautomatisch.\n\nWenn du willst, zeig ich dir in 1 Minute, wie es funktioniert.`;
+      output.textContent = text;
+    }
+  </script>
+</body>
+</html>
