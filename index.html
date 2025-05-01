@@ -1,268 +1,134 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <section class="hero">
-    <h1>Die Zukunft der <span>Automatisierung</span> beginnt hier</h1>
-    <p class="subtext">Ersetze Tools & Teams durch echte KI-Lösungen</p>
-    <button class="btn">Jetzt starten</button>
-    <div class="bot-image">
-      <img src="https://ghostai.world/bot.png" alt="Bot" width="150" />
-    </div>
-  </section>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GHOST.AI – Die Zukunft der Automatisierung</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0b0b0b;
-      color: #FFD700;
-    }
-
-    header {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      background: rgba(0,0,0,0.95);
-      padding: 1em 2em;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #FFD700;
-    }
-
-    nav {
-      display: flex;
-      gap: 1.5em;
-    }
-
-    nav a {
-      color: #FFD700;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background: #111;
-        padding: 1em;
-        border-radius: 8px;
-      }
-      nav.open {
-        display: flex;
-      }
-      .menu-toggle {
-        display: block;
-        cursor: pointer;
-      }
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 1.5em;
-      color: #FFD700;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 120px 20px 60px;
-    }
-
-    .hero h1 {
-      font-size: 2.5em;
-      color: white;
-      margin-bottom: 0.5em;
-    }
-
-    .hero span {
-      color: #FFD700;
-    }
-
-    .hero .subtext {
-      color: #ccc;
-      font-size: 1.1em;
-    }
-
-    .btn {
-      padding: 12px 30px;
-      background: #FFD700;
-      color: #000;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
-
-    .bot-image {
-      margin-top: 30px;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-      100% { transform: translateY(0); }
-    }
-
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .section h2 {
-      font-size: 2em;
-      color: #FFD700;
-      margin-bottom: 40px;
-    }
-
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .box {
-      background: #1a1a1a;
-      border: 1px solid #FFD700;
-      border-radius: 10px;
-      padding: 20px;
-      width: 280px;
-      box-shadow: 0 0 10px rgba(255,215,0,0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .box:hover {
-      transform: translateY(-5px);
-    }
-
-    details {
-      background: #1a1a1a;
-      border: 1px solid #FFD700;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      cursor: pointer;
-    }
-
-    summary {
-      font-weight: bold;
-      color: #FFD700;
-    }
-
-    footer {
-      background: #111;
-      color: #999;
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 0.9em;
-    }
-
-    footer a {
-      color: #FFD700;
-      margin: 0 10px;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <div class="logo">GHOST.AI</div>
-    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-    <nav id="navMenu">
-      <a href="#tools">Tools</a>
-      <a href="#pakete">Pakete</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-  </header>
+<!-- Navigation -->
+<input type="checkbox" id="nav-toggle" hidden>
+<header class="navbar">
+  <div class="logo">GHOST.<span class="gold">AI</span></div>
+  <label for="nav-toggle" class="hamburger">
+    <span></span><span></span><span></span>
+  </label>
+  <ul class="nav-links">
+    <li><a href="#start">Start</a></li>
+    <li><a href="#vorteile">Vorteile</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#pakete">Pakete</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</header>
 
-<section id="vorteile" class="section">
-  <h2>Warum Ghost.AI?</h2>
-  <div class="grid">
-    <div class="box">
-      <i class="fas fa-rocket" style="font-size: 1.5em; color: gold;"></i><br/>
-      <strong>Content in Lichtgeschwindigkeit</strong>
-      <p>Erstelle Inhalte für Social Media & Verkauf in Sekunden – automatisiert und hochwertig.</p>
-    </div>
-    <div class="box">
-      <i class="fas fa-robot" style="font-size: 1.5em; color: gold;"></i><br/>
-      <strong>Rund-um-die-Uhr Support</strong>
-      <p>Dein KI-Agent beantwortet Kundenfragen 24/7 – ganz ohne Pause.</p>
-    </div>
-    <div class="box">
-      <i class="fas fa-cogs" style="font-size: 1.5em; color: gold;"></i><br/>
-      <strong>Volle Automatisierung</strong>
-      <p>Automatisiere Vertrieb, E-Mail-Antworten & Content mit einem System.</p>
-    </div>
-    <div class="box">
-      <i class="fas fa-clock" style="font-size: 1.5em; color: gold;"></i><br/>
-      <strong>Mehr Zeit für Wichtiges</strong>
-      <p>Spar dir tägliche Routinen und gewinne Fokus für dein Business.</p>
-    </div>
+<!-- Hero Bereich -->
+<section id="start" class="hero">
+  <h1>GHOST.<span class="gold">AI</span></h1>
+  <p class="subtext">Die Zukunft der Automatisierung beginnt hier</p>
+  <a href="#pakete" class="btn">Jetzt starten</a>
+  <img src="https://ghostai.world/assets/bot-floating.png" alt="Bot" class="bot-image" />
+</section>
+
+<!-- Vorteile -->
+<section id="vorteile" class="section advantages">
+  <div class="advantage-tile">
+    <div class="advantage-icon">🚀</div>
+    <h3>Content in Sekunden</h3>
+    <p>Social-Media-Beiträge automatisch erstellen.</p>
+  </div>
+  <div class="advantage-tile">
+    <div class="advantage-icon">🤖</div>
+    <h3>24/7 Kundenservice</h3>
+    <p>Antwortet sofort und entlastet dein Team.</p>
+  </div>
+  <div class="advantage-tile">
+    <div class="advantage-icon">⚙️</div>
+    <h3>Volle Automatisierung</h3>
+    <p>E-Mail, Texte, Funnels & mehr.</p>
+  </div>
+  <div class="advantage-tile">
+    <div class="advantage-icon">⏱️</div>
+    <h3>Wertvolle Zeitersparnis</h3>
+    <p>Konzentriere dich aufs Wesentliche.</p>
   </div>
 </section>
 
-  <section id="tools" class="section">
-    <h2>Unsere Tools & KI-Lösungen</h2>
-    <div class="grid">
-      <div class="box"><strong>GhostWriter AI</strong><br/>Erstellt Texte in Sekunden für Social Media & Verkauf.</div>
-      <div class="box"><strong>SupportBot AI</strong><br/>Beantwortet Kundenanfragen 24/7 automatisch.</div>
-      <div class="box"><strong>FunnelBuilder AI</strong><br/>Erstellt Landingpages & Funnels mit einem Klick.</div>
-      <div class="box"><strong>PDF Maker AI</strong><br/>E-Books & Lead-Magnete aus deinen Ideen.</div>
-    </div>
-  </section>
+<!-- Tools -->
+<section id="tools" class="section tools-products">
+  <div class="product-box">
+    <h4>GhostWriter AI</h4>
+    <p>Erstellt Texte & Skripte in Sekunden</p>
+  </div>
+  <div class="product-box">
+    <h4>SupportBot AI</h4>
+    <p>Antwortet Kundenanfragen rund um die Uhr</p>
+  </div>
+  <div class="product-box">
+    <h4>FunnelBuilder AI</h4>
+    <p>Baut dir komplette Verkaufssysteme</p>
+  </div>
+  <div class="product-box">
+    <h4>PDF Maker AI</h4>
+    <p>Generiert E-Books & Lead-Magneten</p>
+  </div>
+</section>
 
-  <section id="pakete" class="section">
-    <h2>Unsere Pakete</h2>
-    <div class="grid">
-      <div class="box"><strong>Starter</strong><br/>29€/Monat<br/>Für Einzelunternehmer</div>
-      <div class="box"><strong>Profi</strong><br/>79€/Monat<br/>Für wachsende Firmen</div>
-      <div class="box"><strong>Elite</strong><br/>149€/Monat<br/>Vollautomatisierung & Support</div>
-    </div>
-  </section>
+<!-- Pakete -->
+<section id="pakete" class="section pricing">
+  <div class="pricing-plan">
+    <h3>Starter</h3>
+    <div class="price">29€/Monat</div>
+    <ul><li>Basisfunktionen</li><li>GhostWriter</li></ul>
+    <a href="#" class="btn">Jetzt sichern</a>
+  </div>
+  <div class="pricing-plan">
+    <h3>Profi</h3>
+    <div class="price">79€/Monat</div>
+    <ul><li>Alle Tools</li><li>Mehr Nutzer</li></ul>
+    <a href="#" class="btn">Jetzt sichern</a>
+  </div>
+  <div class="pricing-plan">
+    <h3>Elite</h3>
+    <div class="price">149€/Monat</div>
+    <ul><li>Vollautomatisierung</li><li>Premium Support</li></ul>
+    <a href="#" class="btn">Jetzt sichern</a>
+  </div>
+</section>
 
-  <section id="faq" class="section">
-    <h2>Häufige Fragen</h2>
-    <div class="grid" style="flex-direction: column; align-items: center;">
-      <details><summary>Wie funktioniert Ghost.AI?</summary><p>Ghost.AI nutzt KI zur Automatisierung deiner Geschäftsprozesse.</p></details>
-      <details><summary>Für wen ist es geeignet?</summary><p>Für Selbstständige, Agenturen und Unternehmen.</p></details>
-      <details><summary>Wie starte ich?</summary><p>Wähle ein Paket aus und starte direkt online.</p></details>
-    </div>
-  </section>
+<!-- FAQ -->
+<section id="faq" class="section faq">
+  <details><summary>Wie funktioniert Ghost.AI?</summary><p>Mit KI-Automatisierung für Text, Support & Funnels.</p></details>
+  <details><summary>Für wen ist Ghost.AI gedacht?</summary><p>Für Selbstständige, Agenturen & Firmen jeder Größe.</p></details>
+  <details><summary>Ist ein Test möglich?</summary><p>Ja, 7 Tage kostenlos im Starter-Paket.</p></details>
+</section>
 
-  <section class="section">
-    <h2>Kundenbewertungen</h2>
-    <div class="grid">
-      <div class="box"><strong>Max Mustermann</strong><br/>„Ghost.AI spart mir täglich Stunden!“</div>
-      <div class="box"><strong>Anna Beispiel</strong><br/>„Ich bekomme Leads im Schlaf – dank MarketingBot.“</div>
-    </div>
-  </section>
+<!-- Kundenbewertungen -->
+<section class="section testimonials">
+  <div class="testimonial">
+    „Ghost.AI spart mir täglich 3 Stunden.“
+    <span class="author">– Daniel Krämer</span>
+  </div>
+  <div class="testimonial">
+    „Die Automatisierung hat mein Team ersetzt.“
+    <span class="author">– Lisa Meier</span>
+  </div>
+  <div class="testimonial">
+    „Ich bin absolut begeistert!“
+    <span class="author">– Julia Hoffmann</span>
+  </div>
+</section>
 
-  <footer>
-    © 2025 GHOST.AI<br/>
-    <a href="#">Impressum</a> | <a href="#">Datenschutz</a> | <a href="#">Kontakt</a>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById("navMenu").classList.toggle("open");
-    }
-  </script>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 GHOST.AI – Alle Rechte vorbehalten</p>
+  <a href="#">Impressum</a> |
+  <a href="#">Datenschutz</a> |
+  <a href="#">Kontakt</a>
+</footer>
 
 </body>
-</html
+</html>
