@@ -1,400 +1,271 @@
-/* Ghost.AI Website - Modern Black & Gold Theme CSS */
+/* ===== Grundstil und Farben ===== */
 :root {
-  --main-bg: #000000;
-  --main-color: #FFD700;
-  --text-color: #DDDDDD;
-  --font-main: 'Poppins', 'Segoe UI', sans-serif;
+  --bg: #0b0b0b;
+  --text: #ffffff;
+  --gold: #f5d56e;
+  --gray: #cccccc;
+  --accent: #1a1a1a;
 }
 
-/* Global Base Styles */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-}
 body {
-  background: var(--main-bg);
-  color: var(--text-color);
-  font-family: var(--font-main);
-  font-weight: 300;
   margin: 0;
-}
-h1, h2, h3, h4, h5, h6 {
-  color: #FFFFFF;
-  margin: 0;
-}
-p {
-  line-height: 1.6;
-  margin: 0 0 1em 0;
-}
-a {
-  color: var(--main-color);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
-/* Reusable Button Style */
-.btn {
-  background: var(--main-color);
-  color: #000;
-  padding: 12px 24px;
-  text-decoration: none;
-  border: none;
-  border-radius: 4px;
-  font-weight: 600;
-  display: inline-block;
-  cursor: pointer;
-}
-.btn:hover {
-  background: #E5C100; /* slightly darker gold */
-}
-.btn:focus {
-  outline: 2px solid var(--main-color);
-  outline-offset: 2px;
-}
-
-/* Navigation Bar */
+/* ===== Navigation & Hamburger ===== */
 .navbar {
-  position: relative;
-  padding: 10px 20px;
-  text-align: center;
-}
-.navbar .logo {
-  font-size: 1.5em;
-  font-weight: 600;
-  color: var(--main-color);
-}
-.navbar .nav-links {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
-  gap: 2em;
+  align-items: center;
+  position: relative;
+  z-index: 999;
 }
-.navbar .nav-links a {
-  color: var(--text-color);
-  font-weight: 500;
-  text-transform: uppercase;
+.logo {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+.gold {
+  color: var(--gold);
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 400;
   font-size: 0.9em;
-  letter-spacing: 0.5px;
 }
-.navbar .nav-links a:hover {
-  color: var(--main-color);
-}
-/* Hamburger menu icon (mobile) */
 .hamburger {
   display: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
 }
 .hamburger span {
   display: block;
-  width: 30px;
+  width: 25px;
   height: 3px;
-  margin: 5px auto;
-  background: var(--main-color);
+  background: var(--gold);
+  margin: 5px;
+  border-radius: 2px;
   transition: all 0.3s ease;
 }
-.hamburger:hover span {
-  background: #FFFFFF;
+
+/* Toggle für Mobile Navigation */
+#nav-toggle:checked + .navbar .nav-links {
+  display: flex;
 }
-#nav-toggle {
-  display: none;
-}
-/* Responsive Nav: show hamburger, hide links on mobile */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 50px;
-    left: 0;
-    right: 0;
-    background: var(--main-bg);
-    width: 100%;
-    text-align: center;
+    top: 60px;
+    background: #111;
+    right: 20px;
+    width: 200px;
+    border-radius: 8px;
     padding: 10px 0;
-    border-top: 1px solid #333;
-  }
-  .nav-links li {
-    margin: 10px 0;
-  }
-  .nav-links a {
-    display: block;
-    padding: 10px;
   }
   .hamburger {
     display: block;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    cursor: pointer;
   }
 }
-/* Toggle menu when hamburger (checkbox) is checked */
-#nav-toggle:checked ~ .nav-links {
-  display: flex;
-}
 
-/* Hero Section */
+/* ===== Hero ===== */
 .hero {
-  position: relative;
   text-align: center;
-  padding: 100px 20px 150px;
+  padding: 100px 20px 140px;
 }
 .hero h1 {
   font-size: 3em;
-  color: var(--main-color);
+  font-weight: 300;
 }
-.hero p {
-  font-size: 1.2em;
-  color: var(--text-color);
-}
-.hero .btn {
-  margin: 20px 0;
+.subtext {
   font-size: 1.1em;
+  color: var(--gray);
 }
-.hero .bot-image {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 300px;
-  width: 60%;
-  height: auto;
-  animation: float 3s ease-in-out infinite;
+.btn {
+  background: var(--gold);
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 20px;
+  display: inline-block;
+  text-decoration: none;
+}
+.bot-image {
+  max-width: 220px;
+  display: block;
+  margin: 40px auto 0;
+  animation: float 4s ease-in-out infinite;
 }
 @keyframes float {
-  0% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-10px); }
-  100% { transform: translateX(-50%) translateY(0); }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
 }
 
-/* Advantage Tiles (Benefits) */
+/* ===== Sektionen ===== */
+.section {
+  padding: 80px 20px;
+}
+.section h2 {
+  text-align: center;
+  font-size: 2em;
+  color: var(--gold);
+}
+
+/* ===== Vorteilskacheln ===== */
 .advantages {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 60px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
 }
 .advantage-tile {
-  background: #222;
-  padding: 20px;
+  background: #111;
+  border: 1px solid rgba(245, 213, 110, 0.1);
+  border-radius: 10px;
+  padding: 30px;
   text-align: center;
-  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(245, 213, 110, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .advantage-tile:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 25px rgba(245, 213, 110, 0.25);
 }
 .advantage-icon {
   font-size: 2em;
-  color: var(--main-color);
-  margin-bottom: 10px;
+  color: var(--gold);
 }
 .advantage-tile h3 {
-  color: #FFFFFF;
-  font-size: 1.2em;
-  margin: 10px 0;
+  font-size: 1.1em;
+  margin: 15px 0 10px;
 }
 .advantage-tile p {
-  color: var(--text-color);
-  font-size: 0.95em;
+  color: var(--gray);
+  font-size: 0.9em;
 }
 
-/* Tools & Products Section */
+/* ===== Tools & Produkte ===== */
 .tools-products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 60px 20px;
+  gap: 30px;
 }
 .product-box {
-  border: 1px solid var(--main-color);
-  background: #111;
-  padding: 20px;
-  border-radius: 5px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--accent);
+  border-left: 3px solid var(--gold);
+  padding: 25px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 .product-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 10px var(--main-color);
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px rgba(245, 213, 110, 0.2);
 }
 .product-box h4 {
-  color: #FFFFFF;
   margin-bottom: 10px;
+  color: var(--gold);
 }
 .product-box p {
-  color: var(--text-color);
-  font-size: 0.95em;
+  font-size: 0.9em;
+  color: var(--gray);
 }
 
-/* Pricing Packages */
+/* ===== Pakete ===== */
 .pricing {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 60px 20px;
+  gap: 30px;
 }
 .pricing-plan {
-  border: 1px solid var(--main-color);
   background: #111;
-  padding: 20px;
-  border-radius: 5px;
+  border: 1px solid rgba(245, 213, 110, 0.2);
+  padding: 30px;
   text-align: center;
-  color: #FFFFFF;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 .pricing-plan:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 10px var(--main-color);
-}
-.pricing-plan h3 {
-  margin: 10px 0;
-  color: #FFFFFF;
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(245, 213, 110, 0.25);
 }
 .pricing-plan .price {
-  color: var(--main-color);
   font-size: 2em;
-  font-weight: bold;
-  margin: 10px 0;
+  color: var(--gold);
+  margin: 15px 0;
 }
 .pricing-plan ul {
   list-style: none;
   padding: 0;
   margin: 20px 0;
-  color: var(--text-color);
-  text-align: left;
+  color: var(--gray);
 }
 .pricing-plan ul li {
-  margin: 5px 0;
+  margin-bottom: 8px;
 }
-.pricing-plan .btn {
+
+/* ===== FAQ ===== */
+.faq details {
+  background: #111;
+  border: 1px solid var(--gold);
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.faq summary {
+  font-weight: 500;
+  color: var(--gold);
+  font-size: 1em;
+}
+.faq p {
+  color: var(--gray);
   margin-top: 10px;
 }
 
-/* FAQ Section (Collapsible Q&A) */
-.faq {
-  padding: 60px 20px;
-}
-.faq details {
-  background: #111;
-  border: 1px solid var(--main-color);
-  border-radius: 5px;
-  margin-bottom: 10px;
-  padding: 15px;
-}
-.faq summary {
-  color: #FFFFFF;
-  font-weight: 600;
-  cursor: pointer;
-  outline: none;
-}
-.faq summary::marker {
-  content: "";
-}
-.faq summary::-webkit-details-marker {
-  display: none;
-}
-.faq summary::after {
-  content: "+";
-  float: right;
-  font-size: 1.2em;
-  line-height: 1;
-  color: var(--main-color);
-  font-weight: bold;
-}
-.faq details[open] summary::after {
-  content: "−";
-}
-.faq details p {
-  color: var(--text-color);
-  margin: 10px 0 0 0;
-}
-.faq details[open] p {
-  border-top: 1px solid #333;
-  padding-top: 10px;
-}
-
-/* Testimonials Section */
+/* ===== Bewertungen ===== */
 .testimonials {
-  padding: 60px 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
 }
 .testimonial {
-  border: 1px solid var(--main-color);
   background: #111;
-  border-radius: 5px;
-  padding: 20px;
-  color: var(--text-color);
+  padding: 25px;
+  border-radius: 10px;
   font-style: italic;
-  position: relative;
-}
-.testimonial::before {
-  content: "“";
-  font-size: 3em;
-  color: var(--main-color);
-  position: absolute;
-  top: -10px;
-  left: 10px;
-}
-.testimonial::after {
-  content: "”";
-  font-size: 3em;
-  color: var(--main-color);
-  position: absolute;
-  bottom: -10px;
-  right: 10px;
+  border-left: 3px solid var(--gold);
 }
 .testimonial .author {
   display: block;
-  text-align: right;
-  color: #FFFFFF;
-  font-style: normal;
   margin-top: 10px;
+  font-style: normal;
+  color: var(--text);
+  font-weight: 500;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
-  background: #000;
   padding: 40px 20px;
   text-align: center;
-  border-top: 1px solid #333;
+  font-size: 0.9em;
+  color: var(--gray);
+  background: #000;
 }
 footer a {
-  color: var(--text-color);
+  color: var(--gold);
   text-decoration: none;
-  margin: 0 10px;
-}
-footer a:hover {
-  color: var(--main-color);
-}
-footer p {
-  color: var(--text-color);
-  font-size: 0.9em;
-  margin: 5px 0;
-}
-
-/* Responsive Adjustments for Small Screens */
-@media (max-width: 600px) {
-  .hero {
-    padding: 80px 20px 120px;
-  }
-  .hero h1 {
-    font-size: 2.2em;
-  }
-  .hero p {
-    font-size: 1em;
-  }
-  .advantages, .tools-products, .pricing, .faq, .testimonials {
-    padding: 40px 20px;
-  }
+  margin: 0 8px;
 }
