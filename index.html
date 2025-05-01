@@ -1,230 +1,268 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="de">
 <head>
+  <section class="hero">
+    <h1>Die Zukunft der <span>Automatisierung</span> beginnt hier</h1>
+    <p class="subtext">Ersetze Tools & Teams durch echte KI-Lösungen</p>
+    <button class="btn">Jetzt starten</button>
+    <div class="bot-image">
+      <img src="https://ghostai.world/bot.png" alt="Bot" width="150" />
+    </div>
+  </section>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GHOST.AI – Die Zukunft arbeitet für dich</title>
+  <title>GHOST.AI – Die Zukunft der Automatisierung</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: #0b0b0b;
-      color: white;
-      overflow-x: hidden;
+      color: #FFD700;
     }
+
     header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0,0,0,0.95);
+      padding: 1em 2em;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      background-color: #0b0b0b;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
     }
-    header img {
-      height: 40px;
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #FFD700;
     }
+
+    nav {
+      display: flex;
+      gap: 1.5em;
+    }
+
     nav a {
-      color: white;
-      margin: 0 15px;
+      color: #FFD700;
       text-decoration: none;
       font-weight: 500;
     }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #111;
+        padding: 1em;
+        border-radius: 8px;
+      }
+      nav.open {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5em;
+      color: #FFD700;
+    }
+
     .hero {
       text-align: center;
       padding: 120px 20px 60px;
-      background: radial-gradient(circle at center, #1e1e1e 0%, #0b0b0b 100%);
     }
+
     .hero h1 {
-      font-size: 2.8em;
-      font-weight: bold;
+      font-size: 2.5em;
       color: white;
+      margin-bottom: 0.5em;
     }
-    .hero h1 span {
-      color: gold;
+
+    .hero span {
+      color: #FFD700;
     }
-    .hero p {
+
+    .hero .subtext {
       color: #ccc;
-      font-size: 1.2em;
-      margin-bottom: 20px;
+      font-size: 1.1em;
     }
+
     .btn {
       padding: 12px 30px;
-      background: gold;
-      color: #0b0b0b;
+      background: #FFD700;
+      color: #000;
       font-weight: bold;
       border: none;
       border-radius: 8px;
-      cursor: pointer;
-      font-size: 1em;
+      margin-top: 20px;
     }
-    .features {
+
+    .bot-image {
+      margin-top: 30px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2em;
+      color: #FFD700;
+      margin-bottom: 40px;
+    }
+
+    .grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 40px 20px;
       gap: 20px;
     }
-    .feature-box {
+
+    .box {
       background: #1a1a1a;
-      padding: 20px;
+      border: 1px solid #FFD700;
       border-radius: 10px;
-      width: 250px;
-      box-shadow: 0 0 15px gold;
-    }
-    .feature-box i {
-      font-size: 1.5em;
-      color: gold;
-      margin-bottom: 10px;
-    }
-    .feature-box h3 {
-      color: gold;
-      margin-bottom: 10px;
-    }
-    .packages, .tools, .faq, .reviews, footer {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .package {
-      display: inline-block;
-      background: #1a1a1a;
       padding: 20px;
-      margin: 10px;
-      width: 200px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px gold;
+      width: 280px;
+      box-shadow: 0 0 10px rgba(255,215,0,0.2);
+      transition: transform 0.3s ease;
     }
-    .package h4 {
-      color: gold;
+
+    .box:hover {
+      transform: translateY(-5px);
     }
-    .tools .tool-box {
+
+    details {
       background: #1a1a1a;
-      margin: 10px auto;
+      border: 1px solid #FFD700;
       padding: 15px;
       border-radius: 8px;
-      width: 80%;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+      margin-bottom: 15px;
+      cursor: pointer;
     }
-    .faq h2, .tools h2, .reviews h2 {
-      color: gold;
-    }
-    .faq-details {
-      max-width: 800px;
-      margin: auto;
-      text-align: left;
-    }
-    footer {
-      font-size: 0.8em;
-      color: #aaa;
-      background: #111;
-      padding: 20px;
-    }
-    .floating-bot {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: gold;
-      color: black;
-      padding: 12px 20px;
-      border-radius: 50px;
+
+    summary {
       font-weight: bold;
-      z-index: 10;
-      box-shadow: 0 0 20px gold;
+      color: #FFD700;
+    }
+
+    footer {
+      background: #111;
+      color: #999;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    footer a {
+      color: #FFD700;
+      margin: 0 10px;
     }
   </style>
 </head>
-<body onload="window.scrollTo(0, 0)">
+<body>
+
   <header>
-    <img src="https://ghostai.world/logo.png" alt="GhostAI Logo" />
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#produkte">Produkte</a>
+    <div class="logo">GHOST.AI</div>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <nav id="navMenu">
+      <a href="#tools">Tools</a>
       <a href="#pakete">Pakete</a>
+      <a href="#faq">FAQ</a>
     </nav>
   </header>
 
-  <div class="hero">
-    <h1>Die Zukunft der <span>Automatisierung</span><br>beginnt hier</h1>
-    <p>Ersetze Tools & Teams durch echte KI-Lösungen</p>
-    <button class="btn">Jetzt starten</button>
+<section id="vorteile" class="section">
+  <h2>Warum Ghost.AI?</h2>
+  <div class="grid">
+    <div class="box">
+      <i class="fas fa-rocket" style="font-size: 1.5em; color: gold;"></i><br/>
+      <strong>Content in Lichtgeschwindigkeit</strong>
+      <p>Erstelle Inhalte für Social Media & Verkauf in Sekunden – automatisiert und hochwertig.</p>
+    </div>
+    <div class="box">
+      <i class="fas fa-robot" style="font-size: 1.5em; color: gold;"></i><br/>
+      <strong>Rund-um-die-Uhr Support</strong>
+      <p>Dein KI-Agent beantwortet Kundenfragen 24/7 – ganz ohne Pause.</p>
+    </div>
+    <div class="box">
+      <i class="fas fa-cogs" style="font-size: 1.5em; color: gold;"></i><br/>
+      <strong>Volle Automatisierung</strong>
+      <p>Automatisiere Vertrieb, E-Mail-Antworten & Content mit einem System.</p>
+    </div>
+    <div class="box">
+      <i class="fas fa-clock" style="font-size: 1.5em; color: gold;"></i><br/>
+      <strong>Mehr Zeit für Wichtiges</strong>
+      <p>Spar dir tägliche Routinen und gewinne Fokus für dein Business.</p>
+    </div>
   </div>
+</section>
 
-  <section id="features" class="features">
-    <div class="feature-box">
-      <i class="fas fa-rocket"></i>
-      <h3>Automatische Content-Erstellung</h3>
-      <p>Erstelle hochwertigen Inhalt in Sekunden.</p>
-    </div>
-    <div class="feature-box">
-      <i class="fas fa-robot"></i>
-      <h3>Intelligenter Kundenservice-Agent</h3>
-      <p>Antwortet automatisch auf Kundenanfragen.</p>
-    </div>
-    <div class="feature-box">
-      <i class="fas fa-bolt"></i>
-      <h3>Maximale Effizienz</h3>
-      <p>Reduziert manuelle Arbeit auf ein Minimum.</p>
-    </div>
-    <div class="feature-box">
-      <i class="fas fa-cogs"></i>
-      <h3>Erweiterte KI-Tools</h3>
-      <p>Für Marketing, Support und Automatisierung.</p>
-    </div>
-  </section>
-
-  <section id="pakete" class="packages">
-    <h2>Unsere Produkte</h2>
-    <div class="package">
-      <h4>Starter</h4>
-      <p>Einstiegspaket für kleine Teams</p>
-      <p><strong>29€/Monat</strong></p>
-      <button class="btn">Jetzt sichern</button>
-    </div>
-    <div class="package">
-      <h4>Profi</h4>
-      <p>Für wachsende Unternehmen</p>
-      <p><strong>79€/Monat</strong></p>
-      <button class="btn">Jetzt sichern</button>
-    </div>
-    <div class="package">
-      <h4>Elite</h4>
-      <p>Vollautomatisierung & Premium Support</p>
-      <p><strong>149€/Monat</strong></p>
-      <button class="btn">Jetzt sichern</button>
-    </div>
-  </section>
-
-  <section id="produkte" class="tools">
+  <section id="tools" class="section">
     <h2>Unsere Tools & KI-Lösungen</h2>
-    <div class="tool-box"><strong>GhostWriter AI</strong>: Automatische Texterstellung auf Deutsch</div>
-    <div class="tool-box"><strong>MailBot AI</strong>: Beantwortet E-Mails wie ein echter Mitarbeiter</div>
-    <div class="tool-box"><strong>MarketingBot AI</strong>: Scannt automatisch Kunden und schreibt sie an</div>
-    <div class="tool-box"><strong>SupportBot AI</strong>: Chatbot für 24/7 Kundenservice auf deiner Website</div>
-  </section>
-
-  <section class="faq">
-    <h2>Häufige Fragen</h2>
-    <div class="faq-details">
-      <p><strong>Was ist Ghost AI?</strong><br>Ghost.AI ist eine KI-Plattform für Automatisierung, Content-Erstellung und Kundenservice.</p>
-      <p><strong>Was bringt es mir?</strong><br>Du sparst Zeit, Geld und ersetzt teure Tools oder Mitarbeiter durch automatisierte Prozesse.</p>
-      <p><strong>Kann ich es testen?</strong><br>Ja, du kannst mit dem Starter-Paket jederzeit beginnen.</p>
+    <div class="grid">
+      <div class="box"><strong>GhostWriter AI</strong><br/>Erstellt Texte in Sekunden für Social Media & Verkauf.</div>
+      <div class="box"><strong>SupportBot AI</strong><br/>Beantwortet Kundenanfragen 24/7 automatisch.</div>
+      <div class="box"><strong>FunnelBuilder AI</strong><br/>Erstellt Landingpages & Funnels mit einem Klick.</div>
+      <div class="box"><strong>PDF Maker AI</strong><br/>E-Books & Lead-Magnete aus deinen Ideen.</div>
     </div>
   </section>
 
-  <section class="reviews">
-    <h2>Kundenmeinungen</h2>
-    <p>„Ghost.AI hat meine E-Mail-Kommunikation komplett übernommen. Wahnsinn!“<br>- Lena, Online-Coach</p>
-    <p>„Ich generiere 80 % meiner Kunden jetzt vollautomatisch.“<br>- Tom, Agenturinhaber</p>
+  <section id="pakete" class="section">
+    <h2>Unsere Pakete</h2>
+    <div class="grid">
+      <div class="box"><strong>Starter</strong><br/>29€/Monat<br/>Für Einzelunternehmer</div>
+      <div class="box"><strong>Profi</strong><br/>79€/Monat<br/>Für wachsende Firmen</div>
+      <div class="box"><strong>Elite</strong><br/>149€/Monat<br/>Vollautomatisierung & Support</div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <h2>Häufige Fragen</h2>
+    <div class="grid" style="flex-direction: column; align-items: center;">
+      <details><summary>Wie funktioniert Ghost.AI?</summary><p>Ghost.AI nutzt KI zur Automatisierung deiner Geschäftsprozesse.</p></details>
+      <details><summary>Für wen ist es geeignet?</summary><p>Für Selbstständige, Agenturen und Unternehmen.</p></details>
+      <details><summary>Wie starte ich?</summary><p>Wähle ein Paket aus und starte direkt online.</p></details>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Kundenbewertungen</h2>
+    <div class="grid">
+      <div class="box"><strong>Max Mustermann</strong><br/>„Ghost.AI spart mir täglich Stunden!“</div>
+      <div class="box"><strong>Anna Beispiel</strong><br/>„Ich bekomme Leads im Schlaf – dank MarketingBot.“</div>
+    </div>
   </section>
 
   <footer>
-    © 2025 GHOST.AI – Alle Rechte vorbehalten<br>
+    © 2025 GHOST.AI<br/>
     <a href="#">Impressum</a> | <a href="#">Datenschutz</a> | <a href="#">Kontakt</a>
   </footer>
 
-  <div class="floating-bot">MarketingBot aktiv</div>
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("open");
+    }
+  </script>
+
 </body>
-</html>
+</html
