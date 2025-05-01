@@ -1,159 +1,230 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GHOST.AI – Die Zukunft der Automatisierung</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GHOST.AI – Die Zukunft arbeitet für dich</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
-      <script>
-  // Verhindert, dass beim Neuladen zu einem Anker (#faq) gescrollt wird
-  if (window.location.hash === "#faq") {
-    history.replaceState(null, null, " ");
-  }
-</script>
       margin: 0;
-      background: black;
-      color: white;
       font-family: 'Segoe UI', sans-serif;
-      scroll-behavior: smooth;
+      background: #0b0b0b;
+      color: white;
+      overflow-x: hidden;
     }
-
-    h1, h2 {
-      font-weight: 700;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #0b0b0b;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
     }
-
+    header img {
+      height: 40px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
     .hero {
       text-align: center;
-      padding: 100px 20px 60px;
-      background: linear-gradient(to bottom, #000000, #111111);
+      padding: 120px 20px 60px;
+      background: radial-gradient(circle at center, #1e1e1e 0%, #0b0b0b 100%);
     }
-
     .hero h1 {
-      font-size: 2.5em;
+      font-size: 2.8em;
+      font-weight: bold;
       color: white;
     }
-
-    .hero .highlight {
+    .hero h1 span {
       color: gold;
     }
-
+    .hero p {
+      color: #ccc;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
     .btn {
-      background-color: gold;
-      color: black;
-      padding: 10px 20px;
+      padding: 12px 30px;
+      background: gold;
+      color: #0b0b0b;
+      font-weight: bold;
       border: none;
-      border-radius: 6px;
-      font-size: 1em;
+      border-radius: 8px;
       cursor: pointer;
-      margin-top: 20px;
+      font-size: 1em;
     }
-
     .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
       gap: 20px;
-      padding: 60px 20px;
     }
-
     .feature-box {
-      background: #111;
-      border: 1px solid gold;
-      border-radius: 10px;
+      background: #1a1a1a;
       padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 0 15px gold;
     }
-
+    .feature-box i {
+      font-size: 1.5em;
+      color: gold;
+      margin-bottom: 10px;
+    }
     .feature-box h3 {
       color: gold;
+      margin-bottom: 10px;
     }
-
-    .section-title {
+    .packages, .tools, .faq, .reviews, footer {
+      padding: 40px 20px;
       text-align: center;
-      font-size: 1.8em;
-      margin-top: 80px;
     }
-
-    .faq {
-      padding: 60px 20px;
-    }
-
-    details {
-      margin-bottom: 15px;
+    .package {
+      display: inline-block;
       background: #1a1a1a;
+      padding: 20px;
+      margin: 10px;
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gold;
+    }
+    .package h4 {
+      color: gold;
+    }
+    .tools .tool-box {
+      background: #1a1a1a;
+      margin: 10px auto;
       padding: 15px;
       border-radius: 8px;
-      border-left: 4px solid gold;
+      width: 80%;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
     }
-
-    summary {
-      font-weight: bold;
-      cursor: pointer;
+    .faq h2, .tools h2, .reviews h2 {
+      color: gold;
     }
-
-    .fixed-bot {
+    .faq-details {
+      max-width: 800px;
+      margin: auto;
+      text-align: left;
+    }
+    footer {
+      font-size: 0.8em;
+      color: #aaa;
+      background: #111;
+      padding: 20px;
+    }
+    .floating-bot {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
+      bottom: 30px;
+      right: 30px;
       background: gold;
       color: black;
-      padding: 10px 16px;
+      padding: 12px 20px;
       border-radius: 50px;
       font-weight: bold;
-      z-index: 9999;
-    }
-
-    a {
-      text-decoration: none;
-      color: black;
+      z-index: 10;
+      box-shadow: 0 0 20px gold;
     }
   </style>
 </head>
-<body>
+<body onload="window.scrollTo(0, 0)">
+  <header>
+    <img src="https://ghostai.world/logo.png" alt="GhostAI Logo" />
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#produkte">Produkte</a>
+      <a href="#pakete">Pakete</a>
+    </nav>
+  </header>
 
   <div class="hero">
-    <h1>Die Zukunft der <span class="highlight">Automatisierung</span> beginnt hier</h1>
+    <h1>Die Zukunft der <span>Automatisierung</span><br>beginnt hier</h1>
+    <p>Ersetze Tools & Teams durch echte KI-Lösungen</p>
     <button class="btn">Jetzt starten</button>
   </div>
 
-  <div class="features">
+  <section id="features" class="features">
     <div class="feature-box">
+      <i class="fas fa-rocket"></i>
       <h3>Automatische Content-Erstellung</h3>
-      <p>Erstelle hochwertige Inhalte in Sekunden.</p>
+      <p>Erstelle hochwertigen Inhalt in Sekunden.</p>
     </div>
     <div class="feature-box">
+      <i class="fas fa-robot"></i>
       <h3>Intelligenter Kundenservice-Agent</h3>
-      <p>Antwortet automatisch auf Kundenanfragen – 24/7.</p>
+      <p>Antwortet automatisch auf Kundenanfragen.</p>
     </div>
     <div class="feature-box">
+      <i class="fas fa-bolt"></i>
       <h3>Maximale Effizienz</h3>
-      <p>Reduziere manuelle Arbeit auf ein Minimum.</p>
+      <p>Reduziert manuelle Arbeit auf ein Minimum.</p>
     </div>
     <div class="feature-box">
+      <i class="fas fa-cogs"></i>
       <h3>Erweiterte KI-Tools</h3>
-      <p>Für Marketing, Kundenservice & Geschäftsautomatisierung.</p>
+      <p>Für Marketing, Support und Automatisierung.</p>
     </div>
-  </div>
+  </section>
 
-  <h2 class="section-title">Häufige Fragen</h2>
-  <div class="faq">
-    <details>
-      <summary>Was ist Ghost.AI?</summary>
-      <p>Ghost.AI ist eine deutschsprachige Plattform zur Automatisierung von Geschäftsprozessen mit KI.</p>
-    </details>
-    <details>
-      <summary>Welche Tools sind enthalten?</summary>
-      <p>GhostWriter AI, MarketingBot, MailBot, SupportBot und viele mehr – vollständig automatisiert.</p>
-    </details>
-    <details>
-      <summary>Ist das auch für Einsteiger geeignet?</summary>
-      <p>Ja! Keine technischen Kenntnisse nötig. Einfach starten und profitieren.</p>
-    </details>
-  </div>
+  <section id="pakete" class="packages">
+    <h2>Unsere Produkte</h2>
+    <div class="package">
+      <h4>Starter</h4>
+      <p>Einstiegspaket für kleine Teams</p>
+      <p><strong>29€/Monat</strong></p>
+      <button class="btn">Jetzt sichern</button>
+    </div>
+    <div class="package">
+      <h4>Profi</h4>
+      <p>Für wachsende Unternehmen</p>
+      <p><strong>79€/Monat</strong></p>
+      <button class="btn">Jetzt sichern</button>
+    </div>
+    <div class="package">
+      <h4>Elite</h4>
+      <p>Vollautomatisierung & Premium Support</p>
+      <p><strong>149€/Monat</strong></p>
+      <button class="btn">Jetzt sichern</button>
+    </div>
+  </section>
 
-  <!-- Schwebender Bot-Button -->
-  <div class="fixed-bot">
-    <a href="#marketingbot">Bot starten</a>
-  </div>
+  <section id="produkte" class="tools">
+    <h2>Unsere Tools & KI-Lösungen</h2>
+    <div class="tool-box"><strong>GhostWriter AI</strong>: Automatische Texterstellung auf Deutsch</div>
+    <div class="tool-box"><strong>MailBot AI</strong>: Beantwortet E-Mails wie ein echter Mitarbeiter</div>
+    <div class="tool-box"><strong>MarketingBot AI</strong>: Scannt automatisch Kunden und schreibt sie an</div>
+    <div class="tool-box"><strong>SupportBot AI</strong>: Chatbot für 24/7 Kundenservice auf deiner Website</div>
+  </section>
 
+  <section class="faq">
+    <h2>Häufige Fragen</h2>
+    <div class="faq-details">
+      <p><strong>Was ist Ghost AI?</strong><br>Ghost.AI ist eine KI-Plattform für Automatisierung, Content-Erstellung und Kundenservice.</p>
+      <p><strong>Was bringt es mir?</strong><br>Du sparst Zeit, Geld und ersetzt teure Tools oder Mitarbeiter durch automatisierte Prozesse.</p>
+      <p><strong>Kann ich es testen?</strong><br>Ja, du kannst mit dem Starter-Paket jederzeit beginnen.</p>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <h2>Kundenmeinungen</h2>
+    <p>„Ghost.AI hat meine E-Mail-Kommunikation komplett übernommen. Wahnsinn!“<br>- Lena, Online-Coach</p>
+    <p>„Ich generiere 80 % meiner Kunden jetzt vollautomatisch.“<br>- Tom, Agenturinhaber</p>
+  </section>
+
+  <footer>
+    © 2025 GHOST.AI – Alle Rechte vorbehalten<br>
+    <a href="#">Impressum</a> | <a href="#">Datenschutz</a> | <a href="#">Kontakt</a>
+  </footer>
+
+  <div class="floating-bot">MarketingBot aktiv</div>
 </body>
 </html>
