@@ -64,17 +64,22 @@ body {
   display: flex;
 }
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    background: #111;
-    right: 20px;
-    width: 200px;
-    border-radius: 8px;
-    padding: 10px 0;
-  }
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  background: #111;
+  right: 20px;
+  width: 200px;
+  border-radius: 8px;
+  padding: 15px 20px; /* mehr Abstand innen */
+  box-sizing: border-box;
+}
+.nav-links li {
+  margin-bottom: 12px;
+  text-align: left;
+} 
   .hamburger {
     display: block;
   }
