@@ -1,241 +1,159 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GHOST.AI – Die Zukunft der Automatisierung</title>
   <style>
     body {
+      <script>
+  // Verhindert, dass beim Neuladen zu einem Anker (#faq) gescrollt wird
+  if (window.location.hash === "#faq") {
+    history.replaceState(null, null, " ");
+  }
+</script>
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #0a0a0a;
-      color: #fff;
-      overflow-x: hidden;
+      background: black;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2 {
+      font-weight: 700;
     }
 
     .hero {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       text-align: center;
-      padding: 20px;
+      padding: 100px 20px 60px;
+      background: linear-gradient(to bottom, #000000, #111111);
     }
 
     .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 2.5em;
+      color: white;
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+    .hero .highlight {
+      color: gold;
     }
 
-    .bot-image {
-      width: 150px;
-      height: 150px;
-      background-image: url('https://example.com/dein-bot-bild.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      animation: float 3s ease-in-out infinite;
+    .btn {
+      background-color: gold;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 20px;
     }
 
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 60px 20px;
     }
 
-    .scroll-down {
-      position: absolute;
-      bottom: 20px;
-      font-size: 1rem;
-      color: #FFD700;
-      animation: bounce 2s infinite;
+    .feature-box {
+      background: #111;
+      border: 1px solid gold;
+      border-radius: 10px;
+      padding: 20px;
     }
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
+    .feature-box h3 {
+      color: gold;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8em;
+      margin-top: 80px;
+    }
+
+    .faq {
+      padding: 60px 20px;
+    }
+
+    details {
+      margin-bottom: 15px;
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid gold;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .fixed-bot {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: gold;
+      color: black;
+      padding: 10px 16px;
+      border-radius: 50px;
+      font-weight: bold;
+      z-index: 9999;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
     }
   </style>
 </head>
 <body>
-  <!-- Hero-Bereich mit Bot -->
-<section class="hero" id="start">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1 class="ghost-title">GHOST.<span class="gold">AI</span></h1>
-    <p class="subheadline">Die Zukunft der Automatisierung beginnt hier</p>
-    <div class="bot-image"></div>
-    <a href="#pakete" class="cta-button">Jetzt starten</a>
-  </div>
-</section>
-  <section class="hero">
-  <h1>Die Zukunft der Automatisierung beginnt hier</h1>
-  <div class="bot-container">
-    <img src="https://raw.githubusercontent.com/NisaZekaj/ghostai-classic-/refs/heads/main/F4D5F994-3ED7-441C-BB67-7E6E7D3A9457.png" alt="GhostAI Bot">
-  </div>
-</section>
-</body>
-</html>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GHOST.AI – Die Zukunft der Automatisierung</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-</head>
-<body>
 
-<!-- Navigation -->
-<header class="header">
-  <div class="container nav-container">
-    <div class="logo">GHOST.<span class="gold">AI</span></div>
-    <nav>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#start">Start</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#pakete">Pakete</a></li>
-        <li><a href="#produkte">Produkte</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
+  <div class="hero">
+    <h1>Die Zukunft der <span class="highlight">Automatisierung</span> beginnt hier</h1>
+    <button class="btn">Jetzt starten</button>
+  </div>
+
+  <div class="features">
+    <div class="feature-box">
+      <h3>Automatische Content-Erstellung</h3>
+      <p>Erstelle hochwertige Inhalte in Sekunden.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Intelligenter Kundenservice-Agent</h3>
+      <p>Antwortet automatisch auf Kundenanfragen – 24/7.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Maximale Effizienz</h3>
+      <p>Reduziere manuelle Arbeit auf ein Minimum.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Erweiterte KI-Tools</h3>
+      <p>Für Marketing, Kundenservice & Geschäftsautomatisierung.</p>
     </div>
   </div>
-</header>
 
-<!-- Hero -->
-<section class="hero" id="start">
-  <div class="hero-overlay"></div>
-  <div class="hero-content" data-aos="fade-up">
-    <img src="logo-symbol.png" alt="Ghost Logo Symbol" class="hero-icon">
-    <h1 class="ghost-title">GHOST.<span class="gold">AI</span></h1>
-    <p class="subheadline">Die Zukunft der Automatisierung beginnt hier</p>
-    <a href="#pakete" class="cta-button">Jetzt starten</a>
+  <h2 class="section-title">Häufige Fragen</h2>
+  <div class="faq">
+    <details>
+      <summary>Was ist Ghost.AI?</summary>
+      <p>Ghost.AI ist eine deutschsprachige Plattform zur Automatisierung von Geschäftsprozessen mit KI.</p>
+    </details>
+    <details>
+      <summary>Welche Tools sind enthalten?</summary>
+      <p>GhostWriter AI, MarketingBot, MailBot, SupportBot und viele mehr – vollständig automatisiert.</p>
+    </details>
+    <details>
+      <summary>Ist das auch für Einsteiger geeignet?</summary>
+      <p>Ja! Keine technischen Kenntnisse nötig. Einfach starten und profitieren.</p>
+    </details>
   </div>
-</section>
 
-<!-- Features -->
-<section class="features" id="features">
-  <div class="container">
-    <div class="feature-grid">
-      <div class="feature-box" data-aos="fade-up" data-aos-duration="1000">
-        <div class="feature-icon">🚀</div>
-        <h3>Automatische Content-Erstellung</h3>
-        <p>Erstelle mühelos Social Media Inhalte mit KI-Unterstützung.</p>
-      </div>
-      <div class="feature-box" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-        <div class="feature-icon">🤖</div>
-        <h3>Intelligenter Kundenservice-Agent</h3>
-        <p>Beantworte Kundenanfragen automatisch – 24/7.</p>
-      </div>
-      <div class="feature-box" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-        <div class="feature-icon">⚙️</div>
-        <h3>Erweiterte KI-Tools</h3>
-        <p>Für Business-Automatisierung, Marketing & Service.</p>
-      </div>
-      <div class="feature-box" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-        <div class="feature-icon">⏱️</div>
-        <h3>Maximale Effizienz</h3>
-        <p>Spare Zeit und fokussiere dich auf das Wesentliche.</p>
-      </div>
-    </div>
+  <!-- Schwebender Bot-Button -->
+  <div class="fixed-bot">
+    <a href="#marketingbot">Bot starten</a>
   </div>
-</section>
-
-<!-- Pakete -->
-<section class="pakete" id="pakete">
-  <div class="container" data-aos="fade-up">
-    <h2 class="pakete-title">Unsere Pakete</h2>
-    <div class="paket-grid">
-      <div class="paket-box" data-aos="zoom-in" data-aos-delay="0">
-        <h3>Starter</h3>
-        <p class="paket-beschreibung">Einsteigerfunktionen<br>für kleine Teams</p>
-        <div class="paket-preis">29 €/Monat</div>
-        <a href="#" class="paket-button">Jetzt sichern</a>
-      </div>
-      <div class="paket-box" data-aos="zoom-in" data-aos-delay="100">
-        <h3>Profi</h3>
-        <p class="paket-beschreibung">Erweiterte Tools<br>für wachsende Unternehmen</p>
-        <div class="paket-preis">79 €/Monat</div>
-        <a href="#" class="paket-button">Jetzt sichern</a>
-      </div>
-      <div class="paket-box" data-aos="zoom-in" data-aos-delay="200">
-        <h3>Elite</h3>
-        <p class="paket-beschreibung">Vollautomatisierung<br>& Premium Support</p>
-        <div class="paket-preis">149 €/Monat</div>
-        <a href="#" class="paket-button">Jetzt sichern</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Produkte -->
-<section class="produkte" id="produkte">
-  <div class="container">
-    <h2 class="produkte-title">Unsere Tools & KI-Lösungen</h2>
-    <div class="produkt-grid">
-      <!-- Produktkarten hier ... (kannst du unverändert lassen) -->
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="container" data-aos="fade-up">
-    <h2 class="faq-title">Häufige Fragen</h2>
-    <!-- FAQ-Boxen hier ... -->
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <p>&copy; 2025 GHOST.AI – Alle Rechte vorbehalten</p>
-    <div class="footer-links">
-      <a href="#">Impressum</a> | 
-      <a href="#">Datenschutz</a> | 
-      <a href="#">Kontakt</a>
-    </div>
-  </div>
-</footer>
-
-<!-- JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-
-  const menuToggle = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('navLinks');
-
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    menuToggle.classList.toggle('open');
-  });
-
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.classList.remove('open');
-    });
-  });
-
-  function toggleFAQ(el) {
-    el.classList.toggle("open");
-  }
-</script>
 
 </body>
 </html>
