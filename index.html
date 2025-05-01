@@ -26,7 +26,7 @@
 </header>
 
 <!-- Hero Bereich -->
-<section id="start" class="hero">
+<section id="start" class="hero fade-in-on-scroll">
   <h1>GHOST.<span class="gold">AI</span></h1>
   <p class="subtext">Die Zukunft der Automatisierung beginnt hier</p>
   <a href="#pakete" class="btn">Jetzt starten</a>
@@ -35,9 +35,8 @@
 
 <!-- Vorteile -->
 <section id="vorteile" class="section advantages">
-  <div class="advantage-tile ">
-    <fade-in-on-scroll "">
-    div class="advantage-icon">🚀</div>
+  <div class="advantage-tile fade-in-on-scroll">
+    <div class="advantage-icon">🚀</div>
     <h3>Content in Sekunden</h3>
     <p>Social-Media-Beiträge automatisch erstellen.</p>
   </div>
@@ -46,7 +45,7 @@
     <h3>24/7 Kundenservice</h3>
     <p>Antwortet sofort und entlastet dein Team.</p>
   </div>
-  <div class="advantage-tile">
+  <div class="advantage-tile fade-in-on-scroll">
     <div class="advantage-icon">⚙️</div>
     <h3>Volle Automatisierung</h3>
     <p>E-Mail, Texte, Funnels & mehr.</p>
@@ -102,9 +101,9 @@
 
 <!-- FAQ -->
 <section id="faq" class="section faq">
-  <details><summary>Wie funktioniert Ghost.AI?</summary><p>Mit KI-Automatisierung für Text, Support & Funnels.</p></details>
-  <details><summary>Für wen ist Ghost.AI gedacht?</summary><p>Für Selbstständige, Agenturen & Firmen jeder Größe.</p></details>
-  <details><summary>Ist ein Test möglich?</summary><p>Ja, 7 Tage kostenlos im Starter-Paket.</p></details>
+  <details class="fade-in-on-scroll"><summary>Wie funktioniert Ghost.AI?</summary><p>Mit KI-Automatisierung für Text, Support & Funnels.</p></details>
+  <details class="fade-in-on-scroll"><summary>Für wen ist Ghost.AI gedacht?</summary><p>Für Selbstständige, Agenturen & Firmen jeder Größe.</p></details>
+  <details class="fade-in-on-scroll"><summary>Ist ein Test möglich?</summary><p>Ja, 7 Tage kostenlos im Starter-Paket.</p></details>
 </section>
 
 <!-- Kundenbewertungen -->
@@ -117,7 +116,7 @@
     „Die Automatisierung hat mein Team ersetzt.“
     <span class="author">– Lisa Meier</span>
   </div>
-  <div class="testimonialfade-in-on-scroll ">
+  <div class="testimonial fade-in-on-scroll">
     „Ich bin absolut begeistert!“
     <span class="author">– Julia Hoffmann</span>
   </div>
@@ -130,6 +129,20 @@
   <a href="#">Datenschutz</a> |
   <a href="#">Kontakt</a>
 </footer>
+
+<!-- Scroll-Animation -->
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+
+  document.querySelectorAll('.fade-in-on-scroll').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
