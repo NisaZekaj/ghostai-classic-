@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GHOST.AI – Die Zukunft der Automatisierung</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
+<!-- Navigation -->
 <input type="checkbox" id="nav-toggle" hidden>
 <header class="navbar">
   <div class="logo">GHOST.<span class="gold">AI</span></div>
@@ -24,6 +25,7 @@
   </ul>
 </header>
 
+<!-- Hero Section -->
 <section id="start" class="hero fade-in-on-scroll">
   <h1>GHOST.<span class="gold">AI</span></h1>
   <p class="subtext">Die Zukunft der Automatisierung beginnt hier</p>
@@ -31,11 +33,12 @@
   <img src="F4D5F994-3ED7-441C-BB67-7E6E7D3A9457.png" alt="Bot" class="bot-image" />
 </section>
 
+<!-- Vorteile -->
 <section id="vorteile" class="section advantages">
   <div class="advantage-tile fade-in-on-scroll">
     <div class="advantage-icon">🚀</div>
     <h3>Content in Sekunden</h3>
-    <p>Social-Media-Beiträge automatisch erstellen.</p>
+    <p>Erstelle Social-Media-Beiträge automatisch.</p>
   </div>
   <div class="advantage-tile fade-in-on-scroll">
     <div class="advantage-icon">🤖</div>
@@ -45,31 +48,32 @@
   <div class="advantage-tile fade-in-on-scroll">
     <div class="advantage-icon">⚙️</div>
     <h3>Volle Automatisierung</h3>
-    <p>E-Mail, Texte, Funnels & mehr.</p>
+    <p>Für E-Mail, Texte, Funnels & mehr.</p>
   </div>
   <div class="advantage-tile fade-in-on-scroll">
     <div class="advantage-icon">⏱️</div>
-    <h3>Wertvolle Zeitersparnis</h3>
-    <p>Konzentriere dich aufs Wesentliche.</p>
+    <h3>Zeitersparnis</h3>
+    <p>Automatisiere wiederkehrende Aufgaben.</p>
   </div>
 </section>
+
 <!-- Tools -->
 <section id="tools" class="section tools-products">
   <div class="product-box fade-in-on-scroll">
     <h4>GhostWriter AI</h4>
-    <p>Erstellt Texte & Skripte in Sekunden</p>
+    <p>Texte & Skripte in Sekunden</p>
   </div>
   <div class="product-box fade-in-on-scroll">
     <h4>SupportBot AI</h4>
-    <p>Antwortet Kundenanfragen rund um die Uhr</p>
+    <p>Antwortet Kunden rund um die Uhr</p>
   </div>
   <div class="product-box fade-in-on-scroll">
     <h4>FunnelBuilder AI</h4>
-    <p>Baut dir komplette Verkaufssysteme</p>
+    <p>Baut dein Verkaufssystem</p>
   </div>
   <div class="product-box fade-in-on-scroll">
     <h4>PDF Maker AI</h4>
-    <p>Generiert E-Books & Lead-Magneten</p>
+    <p>Erstellt E-Books & Lead-Magneten</p>
   </div>
 </section>
 
@@ -78,28 +82,37 @@
   <div class="pricing-plan fade-in-on-scroll">
     <h3>Starter</h3>
     <div class="price">29€/Monat</div>
-    <ul><li>Basisfunktionen</li><li>GhostWriter</li></ul>
+    <ul>
+      <li>Basisfunktionen</li>
+      <li>GhostWriter</li>
+    </ul>
     <a href="#" class="btn">Jetzt sichern</a>
   </div>
   <div class="pricing-plan fade-in-on-scroll">
     <h3>Profi</h3>
     <div class="price">79€/Monat</div>
-    <ul><li>Alle Tools</li><li>Mehr Nutzer</li></ul>
+    <ul>
+      <li>Alle Tools</li>
+      <li>Mehr Nutzer</li>
+    </ul>
     <a href="#" class="btn">Jetzt sichern</a>
   </div>
   <div class="pricing-plan fade-in-on-scroll">
     <h3>Elite</h3>
     <div class="price">149€/Monat</div>
-    <ul><li>Vollautomatisierung</li><li>Premium Support</li></ul>
+    <ul>
+      <li>Vollautomatisierung</li>
+      <li>Premium Support</li>
+    </ul>
     <a href="#" class="btn">Jetzt sichern</a>
   </div>
 </section>
 
 <!-- FAQ -->
 <section id="faq" class="section faq">
-  <details class="fade-in-on-scroll"><summary>Wie funktioniert Ghost.AI?</summary><p>Mit KI-Automatisierung für Text, Support & Funnels.</p></details>
+  <details class="fade-in-on-scroll"><summary>Wie funktioniert Ghost.AI?</summary><p>Mit KI-Automatisierung für Texte, Support & Funnels.</p></details>
   <details class="fade-in-on-scroll"><summary>Für wen ist Ghost.AI gedacht?</summary><p>Für Selbstständige, Agenturen & Firmen jeder Größe.</p></details>
-  <details class="fade-in-on-scroll"><summary>Ist ein Test möglich?</summary><p>Ja, 7 Tage kostenlos im Starter-Paket.</p></details>
+  <details class="fade-in-on-scroll"><summary>Gibt es einen Test?</summary><p>Ja, 7 Tage kostenlos im Starter-Paket.</p></details>
 </section>
 
 <!-- Kundenbewertungen -->
@@ -126,17 +139,21 @@
   <a href="#">Kontakt</a>
 </footer>
 
-<!-- Scroll-Fade-Effekt -->
+<!-- Scroll Animation -->
 <script>
-  const observer = new IntersectionObserver(entries => {
+  const faders = document.querySelectorAll('.fade-in-on-scroll');
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in');
-        observer.unobserve(entry.target);
-      }
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
     });
-  });
-  document.querySelectorAll('.fade-in-on-scroll').forEach(el => observer.observe(el));
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
 </script>
 
 </body>
