@@ -550,11 +550,11 @@ body::before {
   body {
   margin: 0;
   padding: 0;
-  background: #000;
+  background-color: #000;
   background-image: url("A6F467E2-215A-4EF1-A4A8-692FE2A55441.png");
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background-position: top center;
+  background-size: contain;
   background-attachment: fixed;
   font-family: 'Poppins', sans-serif;
   color: #fff;
