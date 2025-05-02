@@ -413,3 +413,25 @@ footer a:hover {
 .testimonials {
   margin-top: -20px;
 }
+/* Titelabstand nach unten reduzieren */
+.section-title {
+  margin-bottom: 20px !important;
+}
+
+/* Abstand zwischen Sektionen kleiner machen */
+#tools,
+#pakete,
+#faq,
+.testimonials {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+/* Falls noch ein extra Abstand nach oben bei Kacheln gesetzt wurde – entfernen */
+.advantages,
+.tools-products,
+.pricing,
+.faq,
+.testimonials {
+  margin-top: 0 !important;
+}
