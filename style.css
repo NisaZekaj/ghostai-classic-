@@ -267,3 +267,22 @@ footer a {
   opacity: 1;
   transform: translateY(0);
 }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  background-image: url('A6F467E2-215A-4EF1-A4A8-692FE2A55441.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #000;
+}
+
+/* Media Query für Geräte mit einer Breite von maximal 768px */
+@media (max-width: 768px) {
+  body {
+    background-position: center top;
+    background-size: cover;
+  }
+}
