@@ -16,14 +16,21 @@
 <body>
 
 <!-- Navigation -->
-<input type="checkbox" id="nav-toggle" hidden>
 <header class="navbar">
   <div class="logo">GHOST.<span class="gold">AI</span></div>
-  <label for="nav-toggle" class="hamburger">
+  <div class="hamburger" onclick="toggleMenu()">
     <span></span>
     <span></span>
     <span></span>
-  </label>
+  </div>
+  <ul class="nav-links" id="nav-menu">
+    <li><a href="#start">Start</a></li>
+    <li><a href="#vorteile">Vorteile</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#pakete">Pakete</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</header>
   <ul class="nav-links">
     <li><a href="#start">Start</a></li>
     <li><a href="#vorteile">Vorteile</a></li>
