@@ -400,3 +400,16 @@ footer a:hover {
   position: relative;
   z-index: 1;
 }
+/* Abstand zwischen Sektionstitel und Inhalt */
+.section-title {
+  margin-bottom: 60px;
+}
+
+/* Extra Abstand nach oben für Kachelbereiche */
+.advantages,
+.tools-products,
+.pricing,
+.faq,
+.testimonials {
+  margin-top: -20px;
+}
