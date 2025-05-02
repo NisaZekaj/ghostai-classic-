@@ -7,6 +7,66 @@
   --color-gray: #cccccc;
   --color-accent: #1a1a1a;
 }
+
+/* Hintergrundbild + Effekt */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  color: var(--color-light);
+  background: #000 url('A6F467E2-215A-4EF1-A4A8-692FE2A55441.png') no-repeat center top;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Dunkler Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55); 
+  z-index: -1;
+}
+
+/* Partikel-Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(245,213,110,0.06) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveParticles 40s linear infinite;
+  z-index: -2;
+  opacity: 0.3;
+}
+
+@keyframes moveParticles {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+/* Mobile Optimierung */
+@media (max-width: 768px) {
+  body {
+    background-position: top center;
+    background-size: cover;
+  }
+  :root {
+  --font-primary: 'Poppins', sans-serif;
+  --color-gold: #f5d56e;
+  --color-dark: #0b0b0b;
+  --color-light: #e0e0e0;
+  --color-gray: #cccccc;
+  --color-accent: #1a1a1a;
+}
   body {
   background: url('A6F467E2-215A-4EF1-A4A8-692FE2A55441.png') no-repeat center center fixed;
   background-size: cover;
