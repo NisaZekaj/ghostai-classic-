@@ -12,14 +12,13 @@ body {
   padding: 0;
   font-family: 'Poppins', sans-serif;
   color: #ffffff;
-  background-image: url('A6F467E2-215A-4EF1-A4A8-692FE2A55441.png');
+  background-image: url('5449E4C7-7B37-49B8-ABDB-5E90ADFD6DC5.png');
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  background-color: #000; /* falls das Bild nicht lädt */
+  background-position: top center;
+  background-size: 100% auto;
+  background-attachment: scroll;
+  background-color: #000;
 }
-
 /* ========== NAVIGATION & HAMBURGER ========== */
 .navbar {
   padding: 20px;
@@ -238,3 +237,10 @@ footer a {
   opacity: 1;
   transform: translateY(0);
 }
+@media (max-width: 768px) {
+  body {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: scroll;
+  }
