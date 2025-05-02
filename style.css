@@ -558,3 +558,9 @@ body::before {
   font-family: 'Poppins', sans-serif;
   color: #ffffff;
 }
+  @media (max-width: 768px) {
+  body {
+    background-position: top;
+    background-size: cover;
+  }
+}
