@@ -435,3 +435,59 @@ footer a:hover {
 .testimonials {
   margin-top: 0 !important;
 }
+/* === Hamburger Menü === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 999;
+}
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: var(--color-gold);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Menü mobil */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: var(--color-gold);
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #0b0b0b;
+    padding: 20px;
+    border: 1px solid var(--color-gold);
+    border-radius: 8px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}
