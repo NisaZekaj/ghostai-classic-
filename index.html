@@ -4,12 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GHOST.AI – Die Zukunft der Automatisierung</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-<!-- Navigation -->
 <input type="checkbox" id="nav-toggle" hidden>
 <header class="navbar">
   <div class="logo">GHOST.<span class="gold">AI</span></div>
@@ -25,7 +24,6 @@
   </ul>
 </header>
 
-<!-- Hero Bereich -->
 <section id="start" class="hero fade-in-on-scroll">
   <h1>GHOST.<span class="gold">AI</span></h1>
   <p class="subtext">Die Zukunft der Automatisierung beginnt hier</p>
@@ -33,7 +31,6 @@
   <img src="F4D5F994-3ED7-441C-BB67-7E6E7D3A9457.png" alt="Bot" class="bot-image" />
 </section>
 
-<!-- Vorteile -->
 <section id="vorteile" class="section advantages">
   <div class="advantage-tile fade-in-on-scroll">
     <div class="advantage-icon">🚀</div>
@@ -56,7 +53,6 @@
     <p>Konzentriere dich aufs Wesentliche.</p>
   </div>
 </section>
-
 <!-- Tools -->
 <section id="tools" class="section tools-products">
   <div class="product-box fade-in-on-scroll">
@@ -130,17 +126,16 @@
   <a href="#">Kontakt</a>
 </footer>
 
-<!-- Scroll-Animation -->
+<!-- Scroll-Fade-Effekt -->
 <script>
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('fade-in');
         observer.unobserve(entry.target);
       }
     });
   });
-
   document.querySelectorAll('.fade-in-on-scroll').forEach(el => observer.observe(el));
 </script>
 
