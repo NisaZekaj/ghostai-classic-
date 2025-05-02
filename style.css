@@ -1,56 +1,82 @@
-/* ========== GLOBAL STYLES ========== */
+:root {
+  --font-primary: 'Poppins', sans-serif;
+  --color-gold: #f5d56e;
+  --color-dark: #0b0b0b;
+  --color-light: #e0e0e0;
+  --color-gray: #cccccc;
+  --color-accent: #1a1a1a;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-primary);
   color: #ffffff;
-  background: #000 url('A6F467E2-215A-4EF1-A4A8-692FE2A55441.png') no-repeat top center;
-  background-size: 100% auto;
-  background-attachment: scroll;
-  background-repeat: repeat-y;
-  background-position: top center;
+  background: #000 url('A6F467E2-215A-4EF1-A4A8-692FE2A55441.png') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
 }
-/* ========== NAVIGATION & HAMBURGER ========== */
+
+/* Overlay-Effekte */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(245,213,110,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: moveParticles 40s linear infinite;
+  z-index: -2;
+  opacity: 0.25;
+}
+
+@keyframes moveParticles {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+/* Navigation */
 .navbar {
   padding: 20px;
   background: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
   z-index: 999;
 }
-
-.logo {
-  font-size: 1.8em;
-  font-weight: 600;
-  color: #fff;
-}
+.logo { font-size: 1.8em; font-weight: 600; color: #fff; }
 .gold { color: var(--color-gold); }
-
 .nav-links {
   list-style: none;
   display: flex;
   gap: 25px;
   padding: 0;
 }
-
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  font-weight: 400;
   font-size: 0.9em;
+  font-weight: 400;
 }
-
-/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
   z-index: 1001;
 }
-
 .hamburger span {
   height: 3px;
   width: 25px;
@@ -60,39 +86,7 @@ body {
   transition: 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #111;
-    position: absolute;
-    right: 20px;
-    top: 70px;
-    padding: 20px;
-    border-radius: 10px;
-    width: 180px;
-    z-index: 1000;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  }
-
-  #nav-toggle:checked ~ .navbar .nav-links {
-    display: flex;
-  }
-
-  .nav-links li {
-    margin-bottom: 15px;
-    text-align: left;
-  }
-
-  .hamburger {
-    display: flex;
-    position: absolute;
-    right: 20px;
-    top: 25px;
-  }
-}
-
-/* ========== HERO SECTION ========== */
+/* Hero */
 .hero {
   text-align: center;
   padding: 100px 20px 140px;
@@ -127,7 +121,7 @@ body {
   100% { transform: translateY(0); }
 }
 
-/* ========== SECTIONS ========== */
+/* Sections */
 .section {
   padding: 80px 20px;
 }
@@ -144,12 +138,13 @@ body {
   gap: 30px;
 }
 .advantage-tile {
-  background: #111;
-  border: 1px solid rgba(245, 213, 110, 0.1);
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(245, 213, 110, 0.15);
   border-radius: 10px;
   padding: 30px;
   text-align: center;
-  box-shadow: 0 0 20px rgba(245, 213, 110, 0.15);
+  box-shadow: 0 0 20px rgba(245, 213, 110, 0.1);
+  backdrop-filter: blur(4px);
 }
 .advantage-icon {
   font-size: 2em;
@@ -163,10 +158,11 @@ body {
   gap: 30px;
 }
 .product-box {
-  background: var(--color-dark);
+  background: rgba(0, 0, 0, 0.6);
   border-left: 3px solid var(--color-gold);
   padding: 25px;
   border-radius: 10px;
+  backdrop-filter: blur(4px);
 }
 
 /* Preise */
@@ -176,11 +172,12 @@ body {
   gap: 30px;
 }
 .pricing-plan {
-  background: #111;
-  border: 1px solid rgba(245, 213, 110, 0.2);
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(245, 213, 110, 0.15);
   padding: 30px;
   text-align: center;
   border-radius: 12px;
+  backdrop-filter: blur(4px);
 }
 
 /* FAQ */
@@ -219,7 +216,7 @@ footer a {
   text-decoration: none;
 }
 
-/* Scroll Animation */
+/* Fade-in Effekt */
 .fade-in-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -229,11 +226,41 @@ footer a {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Mobile Menü */
 @media (max-width: 768px) {
-  body {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-attachment: scroll;
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+  }
+  .nav-links li {
+    margin-bottom: 12px;
+    text-align: left;
+  }
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+  }
+  .hero h1 {
+    font-size: 2em;
+  }
+  .advantages,
+  .tools-products,
+  .pricing,
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+  .bot-image {
+    max-width: 200px;
+    margin-top: 30px;
   }
 }
