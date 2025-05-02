@@ -547,3 +547,15 @@ body::before {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+  body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  background-image: url("FB2C5B26-2972-4B16-8D56-C67D6A849A0D.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
