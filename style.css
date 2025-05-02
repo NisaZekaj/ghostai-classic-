@@ -18,6 +18,56 @@ body {
 
 /* ... (Der komplette CSS-Code geht weiter im nächsten Block) ... */
 /* ========== NAVIGATION & HAMBURGER ========== */
+/* Hamburger-Menü */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background-color: var(--color-gold);
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 180px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  #nav-toggle:checked ~ .navbar .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
 .navbar {
   padding: 20px;
   background: rgba(0, 0, 0, 0.9);
