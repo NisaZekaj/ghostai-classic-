@@ -7,30 +7,43 @@
   --color-accent: #1a1a1a;
 }
 
+/* Vollflächiger, responsiver Hintergrund für <body> */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  color: #ffffff;
-  background-image: url('https://raw.githubusercontent.com/NisaZekaj/ghostai-classic/main/A6F467E2-215A-4EF1-A4A8-692FE2A55441.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center top;
-  background-color: #000;
-  position: relative;
-}
-/* Optional: leicht abdunkeln für besseren Kontrast */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: -1;
+    margin: 0; /* Standardmargin entfernen, damit Hintergrund bis an den Seitenrand reicht */
+    /* Fallback-Hintergrundfarbe (wird gezeigt, falls das Bild nicht lädt) */
+    background-color: #000;  /* z.B. Schwarz oder ein dunkler Farbton */
+    /* Hintergrundbild-Einbindung und Positionierung */
+    background-image: url('A6F467E2-215A-4EF1-A4A8-692FE2A55441.png'); /* Pfad ggf. anpassen, falls Bild in Unterordner liegt */
+    background-position: center center;  /* zentriert horizontal und vertikal */
+    background-repeat: no-repeat;        /* Bild nicht kacheln */
+    /* Bild so skalieren, dass immer der gesamte Bereich ausgefüllt wird */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    /* Stellt sicher, dass der Body mindestens eine Bildschirmhöhe einnimmt (für kleine Seiteninhalte) */
+    min-height: 100vh;
 }
 
+/* Optional: Dunkle Overlay-Transparenz über dem Hintergrundbild 
+   (einfach die folgenden Regeln aktivieren und die obigen background-image/position/repeat-Zeilen auskommentieren) */
+/*
+body {
+    position: relative; /* notwendig, falls ein pseudo-Element verwendet wird */
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* schwarze Overlay-Farbe mit 50% Deckkraft */
+    pointer-events: none;          /* Overlay ist nicht klickbar */
+}
+body {
+    background-image: url('A6F467E2-215A-4EF1-A4A8-692FE2A55441.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+*/
 @keyframes moveParticles {
   0% { background-position: 0 0; }
   100% { background-position: 100px 100px; }
