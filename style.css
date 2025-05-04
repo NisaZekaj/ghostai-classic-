@@ -237,3 +237,11 @@ footer a {
   backdrop-filter: blur(4px);
   box-shadow: 0 0 15px rgba(245, 213, 110, 0.15);
 }
+.tile,
+.advantage-tile,
+.product-box,
+.pricing-plan,
+.testimonial,
+.faq details {
+  margin-bottom: 30px;
+}
