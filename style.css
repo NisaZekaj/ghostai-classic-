@@ -7,46 +7,29 @@
   --color-accent: #1a1a1a;
 }
 
-/* Vollflächiger, responsiver Hintergrund für <body> */
 body {
-    margin: 0; /* Standardmargin entfernen, damit Hintergrund bis an den Seitenrand reicht */
-    /* Fallback-Hintergrundfarbe (wird gezeigt, falls das Bild nicht lädt) */
-    background-color: #000;  /* z.B. Schwarz oder ein dunkler Farbton */
-    /* Hintergrundbild-Einbindung und Positionierung */
-    background-image: url('A6F467E2-215A-4EF1-A4A8-692FE2A55441.png'); /* Pfad ggf. anpassen, falls Bild in Unterordner liegt */
-    background-position: center center;  /* zentriert horizontal und vertikal */
-    background-repeat: no-repeat;        /* Bild nicht kacheln */
-    /* Bild so skalieren, dass immer der gesamte Bereich ausgefüllt wird */
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    /* Stellt sicher, dass der Body mindestens eine Bildschirmhöhe einnimmt (für kleine Seiteninhalte) */
-    min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  color: #ffffff;
+  background-image: url('A6F467E2-215A-4EF1-A4A8-692FE2A55441.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  background-attachment: scroll;
+  background-color: #000;
+  min-height: 100vh;
+  position: relative;
 }
 
-/* Optional: Dunkle Overlay-Transparenz über dem Hintergrundbild 
-   (einfach die folgenden Regeln aktivieren und die obigen background-image/position/repeat-Zeilen auskommentieren) */
-/*
-body {
-    position: relative; /* notwendig, falls ein pseudo-Element verwendet wird */
-}
 body::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* schwarze Overlay-Farbe mit 50% Deckkraft */
-    pointer-events: none;          /* Overlay ist nicht klickbar */
-}
-body {
-    background-image: url('A6F467E2-215A-4EF1-A4A8-692FE2A55441.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-*/
-@keyframes moveParticles {
-  0% { background-position: 0 0; }
-  100% { background-position: 100px 100px; }
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
 }
 
 /* Navigation */
@@ -132,19 +115,14 @@ body {
   color: var(--color-gold);
 }
 
-/* Vorteile */
-.advantages {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-}
+/* Vorteilskacheln */
 .advantage-tile {
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(245, 213, 110, 0.15);
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(245, 213, 110, 0.2);
   border-radius: 10px;
   padding: 30px;
   text-align: center;
-  box-shadow: 0 0 20px rgba(245, 213, 110, 0.1);
+  color: #fff;
   backdrop-filter: blur(4px);
 }
 .advantage-icon {
@@ -153,13 +131,9 @@ body {
 }
 
 /* Tools */
-.tools-products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-}
 .product-box {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
   border-left: 3px solid var(--color-gold);
   padding: 25px;
   border-radius: 10px;
@@ -167,17 +141,13 @@ body {
 }
 
 /* Preise */
-.pricing {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
 .pricing-plan {
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(245, 213, 110, 0.15);
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(245, 213, 110, 0.2);
   padding: 30px;
   text-align: center;
   border-radius: 12px;
+  color: #fff;
   backdrop-filter: blur(4px);
 }
 
@@ -191,11 +161,6 @@ body {
 }
 
 /* Testimonials */
-.testimonials {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-}
 .testimonial {
   background: #111;
   padding: 25px;
@@ -217,7 +182,7 @@ footer a {
   text-decoration: none;
 }
 
-/* Fade-in Effekt */
+/* Scroll Animation */
 .fade-in-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -228,7 +193,7 @@ footer a {
   transform: translateY(0);
 }
 
-/* Mobile Menü */
+/* Mobile Optimierung */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
