@@ -260,3 +260,8 @@ footer a {
 #testimonials {
     padding-top: 40px; /* statt 80px oder mehr */
 }
+#pricing.section,
+#faq.section,
+#testimonials.section {
+  padding-top: 20px;
+}
