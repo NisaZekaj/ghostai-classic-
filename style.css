@@ -274,3 +274,10 @@ footer a {
 .pricing {
   margin-top: 0 !important;
 }
+#pricing h2 {
+  margin-bottom: 30px; /* gleichmäßiger Abstand wie bei Tools */
+}
+
+#pricing .pricing-plan {
+  margin-top: 0px; /* Kachel direkt an Titel ohne Lücke */
+}
