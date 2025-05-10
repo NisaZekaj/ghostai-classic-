@@ -244,11 +244,15 @@ footer a {
 }
 .tile,
 .advantage-tile,
-.product-box,
+.product-box {
+  margin-bottom: 15px; /* Weniger Abstand nach unten */
+}
+
 .pricing-plan,
 .testimonial,
 .faq details {
   margin-bottom: 30px;
+}
 }
 #pricing h2,
 #faq h2,
