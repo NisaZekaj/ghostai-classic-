@@ -253,7 +253,6 @@ footer a {
 .faq details {
   margin-bottom: 30px;
 }
-}
 #pricing h2,
 #faq h2,
 #testimonials h2 {
@@ -269,32 +268,9 @@ footer a {
 #testimonials.section {
   padding-top: 20px;
 }
-#pricing.section {
-  padding-top: 0px !important;
-}
-
-#pricing h2 {
-  margin-bottom: 40px; /* exakt wie bei Tools */
-}
-#pricing.section {
-  padding-top: 20px !important;
-}
-
-#pricing h2 {
-  margin-bottom: 20px; /* kleiner Abstand unter Titel */
-}
-
-.pricing-plan {
-  margin-top: 0px; /* kein überflüssiger Abstand nach oben */
-}
-#pricing.section {
-  padding-top: 20px !important;
-}
-
 #pricing h2 {
   margin-bottom: 20px !important;
 }
-
 .pricing {
   margin-top: 0 !important;
 }
