@@ -281,3 +281,6 @@ footer a {
 #pricing .pricing-plan {
   margin-top: 0px; /* Kachel direkt an Titel ohne Lücke */
 }
+#pricing .pricing-plan:first-child {
+  margin-top: 20px;
+}
