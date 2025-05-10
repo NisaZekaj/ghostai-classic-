@@ -276,3 +276,14 @@ footer a {
 #pricing h2 {
   margin-bottom: 40px; /* exakt wie bei Tools */
 }
+#pricing.section {
+  padding-top: 20px !important;
+}
+
+#pricing h2 {
+  margin-bottom: 20px; /* kleiner Abstand unter Titel */
+}
+
+.pricing-plan {
+  margin-top: 0px; /* kein überflüssiger Abstand nach oben */
+}
