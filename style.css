@@ -255,3 +255,8 @@ footer a {
 #testimonials h2 {
     margin-bottom: 20px;
 }
+#pricing,
+#faq,
+#testimonials {
+    padding-top: 40px; /* statt 80px oder mehr */
+}
