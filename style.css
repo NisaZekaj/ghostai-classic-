@@ -250,3 +250,8 @@ footer a {
 .faq details {
   margin-bottom: 30px;
 }
+#pricing h2,
+#faq h2,
+#testimonials h2 {
+    margin-bottom: 20px;
+}
