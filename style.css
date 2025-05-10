@@ -269,3 +269,10 @@ footer a {
 #testimonials.section {
   padding-top: 20px;
 }
+#pricing.section {
+  padding-top: 0px !important;
+}
+
+#pricing h2 {
+  margin-bottom: 40px; /* exakt wie bei Tools */
+}
