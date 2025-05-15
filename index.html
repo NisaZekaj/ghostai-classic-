@@ -138,7 +138,12 @@ document.getElementById("generate-button").addEventListener("click", async () =>
   });
 </script>
   <textarea id="text-output" rows="8">Hier erscheint dein Text...</textarea>
-<body>
+<div style="text-align: center; margin: 60px auto; max-width: 600px;">
+  <textarea id="text-output" rows="8" placeholder="Hier erscheint dein Text..." style="width: 100%; padding: 12px; border-radius: 8px; border: none; font-size: 16px;"></textarea>
+  <br><br>
+  <button id="download-pdf" class="btn">Als PDF herunterladen</button>
+</div>
+  <body>
 
 <!-- Navigation -->
 <nav class="navbar">
