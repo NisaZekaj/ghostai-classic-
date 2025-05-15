@@ -63,6 +63,25 @@
     }
   });
 </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  document.getElementById("download-pdf").addEventListener("click", () => {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    const output = document.getElementById("ghostwriter-output").innerText;
+
+    if (!output.trim()) {
+      alert("Bitte erst einen Text generieren.");
+      return;
+    }
+
+    doc.setFont("helvetica");
+    doc.setFontSize(12);
+    doc.text(output, 10, 20);
+    doc.save("ghostwriter-ai.pdf");
+  });
+</script>
 <body>
 
 <!-- Navigation -->
