@@ -287,3 +287,12 @@ footer a {
 #pricing .pricing-plan:first-child {
   margin-top: 10px; /* exakt wie bei "Unsere Tools & KI-Lösungen" */
 }
+.nav-links {
+  display: none;
+  flex-direction: column;
+  /* ... */
+}
+
+.nav-links.show {
+  display: flex;
+}
