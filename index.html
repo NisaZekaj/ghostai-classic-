@@ -134,7 +134,74 @@
     <a href="#" class="btn">Jetzt sichern</a>
   </div>
 </section>
+<!-- === GHOSTWRITER AI TOOL – PHASE 1 (Frontend) === -->
+<section id="ghostwriter" class="section">
+  <h2 class="section-title">GhostWriter AI – Intelligente Textgenerierung</h2>
+  <form id="ghostwriter-form" class="ghostwriter-form">
+    <label for="zielgruppe">Zielgruppe:</label>
+    <input type="text" id="zielgruppe" name="zielgruppe" placeholder="z. B. Fitness-Coaches" required>
 
+    <label for="thema">Thema:</label>
+    <input type="text" id="thema" name="thema" placeholder="z. B. Motivation am Montag" required>
+
+    <label for="textart">Textart:</label>
+    <select id="textart" name="textart">
+      <option value="social">Social-Media-Post</option>
+      <option value="werbung">Werbetext</option>
+      <option value="beschreibung">Produktbeschreibung</option>
+      <option value="email">E-Mail</option>
+      <option value="skript">Skript / Sprechtext</option>
+    </select>
+
+    <label for="stil">Stilrichtung:</label>
+    <select id="stil" name="stil">
+      <option value="emotional">Emotional</option>
+      <option value="direkt">Direkt</option>
+      <option value="fachlich">Fachlich</option>
+      <option value="frech">Frech & provokant</option>
+    </select>
+
+    <button type="submit" class="btn">Text generieren</button>
+  </form>
+
+  <div id="ghostwriter-output" class="ghostwriter-output" style="display: none;">
+    <h3>Dein Text:</h3>
+    <textarea id="generated-text" readonly></textarea>
+    <button onclick="copyText()" class="btn">Text kopieren</button>
+  </div>
+</section>
+
+<!-- === GHOSTWRITER AI – DEMO LOGIK (nur lokal) === -->
+<script>
+  document.getElementById('ghostwriter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const zielgruppe = document.getElementById('zielgruppe').value;
+    const thema = document.getElementById('thema').value;
+    const textart = document.getElementById('textart').value;
+    const stil = document.getElementById('stil').value;
+
+    const text = `Hey ${zielgruppe},
+
+hier ist ein ${stil}er ${textart} zum Thema "${thema}" – perfekt abgestimmt auf deine Zielgruppe:
+
+>> [DEMO-INHALT – KI-Text folgt in Phase 2]
+
+Bleib dran!
+Dein GhostWriter AI`;
+
+    document.getElementById('generated-text').value = text;
+    document.getElementById('ghostwriter-output').style.display = 'block';
+  });
+
+  function copyText() {
+    const textArea = document.getElementById("generated-text");
+    textArea.select();
+    document.execCommand("copy");
+    alert("Text wurde kopiert!");
+  }
+</script>
+    
 <!-- FAQ -->
 <section id="faq" class="section faq">
   <h2 class="section-title">FAQ</h2>
