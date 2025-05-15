@@ -49,19 +49,33 @@
 <div style="text-align: center; margin-top: 20px;">
   <button id="download-pdf" class="btn">Als PDF herunterladen</button>
 </div>
-    function generateGhostText(topic, tone, keywords) {
-      // Einfacher Generator (simuliert KI-Logik)
-      let intro = tone === "motivierend" 
-        ? "Stell dir vor, du erreichst dein Ziel – mit Klarheit, Fokus und Power." 
-        : "In einer Welt voller Informationen ist Klarheit entscheidend.";
-      let middle = `Hier ist ein kurzer Text zum Thema <strong>${topic}</strong>`;
-      let ending = keywords 
-        ? `Dabei spielen folgende Begriffe eine zentrale Rolle: <em>${keywords}</em>.`
-        : "Mach den ersten Schritt – jetzt.";
-      
-      return `${intro} ${middle} ${ending}`;
-    }
-  });
+    <script>
+  async function generateGhostText() {
+    const audience = document.getElementById("audience").value;
+    const topic = document.getElementById("topic").value;
+    const format = document.getElementById("format").value;
+    const tone = document.getElementById("tone").value;
+
+    const prompt = `Erstelle einen ${tone} ${format} für die Zielgruppe "${audience}" zum Thema "${topic}".`;
+
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer DEIN_API_KEY_HIER"
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: prompt }],
+        max_tokens: 300
+      })
+    });
+
+    const data = await response.json();
+    const result = data.choices?.[0]?.message?.content || "[Fehler bei der Texterstellung]";
+    document.getElementById("output").value = result;
+  }
+</script>
 </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
