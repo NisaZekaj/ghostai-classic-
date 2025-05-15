@@ -75,11 +75,34 @@
       alert("Bitte erst einen Text generieren.");
       return;
     }
-
+<div style="margin-top: 20px; text-align: center;">
+  <input type="email" id="email-address" placeholder="Deine E-Mail-Adresse" style="padding: 10px; border-radius: 6px; border: none; width: 70%; max-width: 300px; margin-bottom: 10px;">
+  <br>
+  <button id="send-email" class="btn">Text per E-Mail senden</button>
+</div>
     doc.setFont("helvetica");
     doc.setFontSize(12);
     doc.text(output, 10, 20);
     doc.save("ghostwriter-ai.pdf");
+  });
+</script>
+  <script>
+  document.getElementById("send-email").addEventListener("click", () => {
+    const email = document.getElementById("email-address").value.trim();
+    const content = document.getElementById("ghostwriter-output").value;
+
+    if (!email || !email.includes("@")) {
+      alert("Bitte gib eine gültige E-Mail-Adresse ein.");
+      return;
+    }
+
+    if (!content.trim()) {
+      alert("Bitte erst einen Text generieren.");
+      return;
+    }
+
+    const mailto = `mailto:${email}?subject=Dein%20GhostWriter%20AI%20Text&body=${encodeURIComponent(content)}`;
+    window.location.href = mailto;
   });
 </script>
 <body>
