@@ -18,6 +18,49 @@
     nav.classList.toggle("show");
   }
 </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("ghostwriter-form");
+    const output = document.getElementById("ghostwriter-output");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const topic = document.getElementById("ghostwriter-topic").value;
+      const tone = document.getElementById("ghostwriter-tone").value;
+      const keywords = document.getElementById("ghostwriter-keywords").value;
+
+      if (!topic || !tone) {
+        output.innerHTML = "<p style='color: gold;'>Bitte fülle alle Pflichtfelder aus.</p>";
+        return;
+      }
+
+      // KI-ähnliche Demo-Ausgabe
+      const response = `
+        <h3>Dein GhostWriter AI Ergebnis:</h3>
+        <p><strong>Thema:</strong> ${topic}</p>
+        <p><strong>Tonfall:</strong> ${tone}</p>
+        <p><strong>Text:</strong></p>
+        <p>${generateGhostText(topic, tone, keywords)}</p>
+      `;
+
+      output.innerHTML = response;
+    });
+
+    function generateGhostText(topic, tone, keywords) {
+      // Einfacher Generator (simuliert KI-Logik)
+      let intro = tone === "motivierend" 
+        ? "Stell dir vor, du erreichst dein Ziel – mit Klarheit, Fokus und Power." 
+        : "In einer Welt voller Informationen ist Klarheit entscheidend.";
+      let middle = `Hier ist ein kurzer Text zum Thema <strong>${topic}</strong>`;
+      let ending = keywords 
+        ? `Dabei spielen folgende Begriffe eine zentrale Rolle: <em>${keywords}</em>.`
+        : "Mach den ersten Schritt – jetzt.";
+      
+      return `${intro} ${middle} ${ending}`;
+    }
+  });
+</script>
 <body>
 
 <!-- Navigation -->
