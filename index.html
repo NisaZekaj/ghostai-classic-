@@ -157,49 +157,42 @@
 
 <!-- === GHOSTWRITER AI LOGIK === -->
 <script>
-  document.getElementById('ghostwriter-form').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.getElementById('ghostwriter-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
 
-    const zielgruppe = document.getElementById('zielgruppe').value;
-    const thema = document.getElementById('thema').value;
-    const textart = document.getElementById('textart').value;
-    const stil = document.getElementById('stil').value;
+  const zielgruppe = document.getElementById('zielgruppe').value;
+  const thema = document.getElementById('thema').value;
+  const textart = document.getElementById('textart').value;
+  const stil = document.getElementById('stilrichtung').value;
 
-    const text = `Hey ${zielgruppe},
+  const textOutput = document.getElementById('generated-text');
+  const outputBox = document.getElementById('ghostwriter-output');
 
-hier ist ein ${stil}er ${textart} zum Thema "${thema}" – perfekt abgestimmt auf deine Zielgruppe:
+  textOutput.value = "KI denkt nach...";
+  outputBox.style.display = 'block';
 
->> [DEMO-INHALT – KI-Text folgt in Phase 2]
+  try {
+    const response = await fetch('/api/generate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        topic: thema,
+        tone: stil,
+        type: textart,
+        style: stil,
+        target: zielgruppe
+      })
+    });
 
-Bleib dran!
-Dein GhostWriter AI`;
-
-    document.getElementById('generated-text').value = text;
-    document.getElementById('ghostwriter-output').style.display = 'block';
-  });
-
-  function copyText() {
-    const textArea = document.getElementById("generated-text");
-    textArea.select();
-    document.execCommand("copy");
-    alert("Text wurde kopiert!");
+    const data = await response.json();
+    textOutput.value = data.result || 'Fehler bei der Texterstellung.';
+  } catch (error) {
+    textOutput.value = 'Es ist ein Fehler aufgetreten.';
+    console.error(error);
   }
-
-  document.getElementById("download-pdf").addEventListener("click", () => {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-    const output = document.getElementById("generated-text").value;
-
-    if (!output.trim()) {
-      alert("Bitte erst einen Text generieren.");
-      return;
-    }
-
-    doc.setFont("helvetica");
-    doc.setFontSize(12);
-    doc.text(output, 10, 20);
-    doc.save("ghostwriter-ai.pdf");
-  });
+});
 </script>
 <!-- Pakete -->
   <section id="pakete" class="section tools-products">
