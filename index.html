@@ -157,42 +157,31 @@
 
 <!-- === GHOSTWRITER AI LOGIK === -->
 <script>
-document.getElementById('ghostwriter-form').addEventListener('submit', async function (e) {
-  e.preventDefault();
+  document.getElementById("ghostwriter-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-  const zielgruppe = document.getElementById('zielgruppe').value;
-  const thema = document.getElementById('thema').value;
-  const textart = document.getElementById('textart').value;
-  const stil = document.getElementById('stilrichtung').value;
+    const target = document.getElementById("zielgruppe").value;
+    const topic = document.getElementById("thema").value;
+    const type = document.getElementById("textart").value;
+    const tone = document.getElementById("stilrichtung").value;
 
-  const textOutput = document.getElementById('generated-text');
-  const outputBox = document.getElementById('ghostwriter-output');
+    const responseElement = document.getElementById("text-output");
+    responseElement.value = "KI denkt nach...";
 
-  textOutput.value = "KI denkt nach...";
-  outputBox.style.display = 'block';
+    try {
+      const res = await fetch("/api/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ target, topic, type, tone })
+      });
 
-  try {
-    const response = await fetch('/api/generate', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        topic: thema,
-        tone: stil,
-        type: textart,
-        style: stil,
-        target: zielgruppe
-      })
-    });
-
-    const data = await response.json();
-    textOutput.value = data.result || 'Fehler bei der Texterstellung.';
-  } catch (error) {
-    textOutput.value = 'Es ist ein Fehler aufgetreten.';
-    console.error(error);
-  }
-});
+      const data = await res.json();
+      responseElement.value = data.result || "Fehler beim Generieren.";
+    } catch (err) {
+      responseElement.value = "Fehler beim Serverzugriff.";
+      console.error(err);
+    }
+  });
 </script>
 <!-- Pakete -->
   <section id="pakete" class="section tools-products">
