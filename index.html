@@ -51,74 +51,6 @@
   </ul>
 </nav>
 
-<!-- GhostWriter Tool -->
-<section id="ghostwriter" class="ghostwriter-section">
-  <h2>GhostWriter AI – Intelligente Textgenerierung</h2>
-  <form id="ghostwriter-form">
-    <input type="text" id="zielgruppe" placeholder="Zielgruppe" required><br>
-    <input type="text" id="thema" placeholder="Thema" required><br>
-    <select id="textart">
-      <option value="Social-Media-Post">Social-Media-Post</option>
-      <option value="Werbetext">Werbetext</option>
-      <option value="Produktbeschreibung">Produktbeschreibung</option>
-      <option value="E-Mail">E-Mail</option>
-      <option value="Skript">Skript</option>
-    </select><br>
-    <select id="stilrichtung">
-      <option value="Emotional">Emotional</option>
-      <option value="Direkt">Direkt</option>
-      <option value="Fachlich">Fachlich</option>
-      <option value="Frech">Frech & provokant</option>
-    </select><br>
-    <button type="submit" class="btn">Text generieren</button>
-  </form>
-
-  <textarea id="text-output" rows="8" placeholder="Hier erscheint dein Text..." readonly></textarea><br>
-  <button id="download-pdf" class="btn">Als PDF herunterladen</button>
-</section>
-
-<script>
-  // Toggle-Menü
-  function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    nav.classList.toggle('show');
-  }
-
-  // Textgenerierung (DEMO)
-  document.getElementById('ghostwriter-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const zielgruppe = document.getElementById('zielgruppe').value;
-    const thema = document.getElementById('thema').value;
-    const textart = document.getElementById('textart').value;
-    const stil = document.getElementById('stilrichtung').value;
-
-    const text = `Hey ${zielgruppe},
-
-hier ist ein ${stil}er ${textart} zum Thema "${thema}" – perfekt abgestimmt auf deine Zielgruppe:
-
->> [DEMO-INHALT – KI-Text folgt in Phase 2]
-
-Bleib dran!
-Dein GhostWriter AI`;
-
-    document.getElementById('text-output').value = text;
-  });
-
-  // PDF Download
-  document.getElementById("download-pdf").addEventListener("click", () => {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-    const output = document.getElementById("text-output").value;
-    if (!output.trim()) {
-      alert("Bitte erst einen Text generieren.");
-      return;
-    }
-    doc.setFont("helvetica");
-    doc.setFontSize(12);
-    doc.text(output, 10, 20);
-    doc.save("ghostwriter-ai.pdf");
-  });
-</script>
 </body>
 </html>
 
@@ -202,7 +134,90 @@ Dein GhostWriter AI`;
     <p>Erstelle E-Books, Checklisten, Freebies oder komplette digitale Produkte – per Klick aus Stichpunkten, mit passendem Design und Download-Link.</p>
   </div>
 </section>
+<!-- === GHOSTWRITER AI TOOL – PHASE 1 (Frontend) === -->
+<section id="ghostwriter" class="section ghostwriter-section fade-in-on-scroll">
+  <h2 class="section-title">GhostWriter AI – Intelligente Textgenerierung</h2>
+  <form id="ghostwriter-form" class="ghostwriter-form">
+    <label for="zielgruppe">Zielgruppe:</label>
+    <input type="text" id="zielgruppe" name="zielgruppe" placeholder="z. B. Fitness-Coaches" required>
 
+    <label for="thema">Thema:</label>
+    <input type="text" id="thema" name="thema" placeholder="z. B. Motivation am Montag" required>
+
+    <label for="textart">Textart:</label>
+    <select id="textart" name="textart">
+      <option value="Social-Media-Post">Social-Media-Post</option>
+      <option value="Werbetext">Werbetext</option>
+      <option value="Produktbeschreibung">Produktbeschreibung</option>
+      <option value="E-Mail">E-Mail</option>
+      <option value="Skript">Skript / Sprechtext</option>
+    </select>
+
+    <label for="stil">Stilrichtung:</label>
+    <select id="stil" name="stil">
+      <option value="Emotional">Emotional</option>
+      <option value="Direkt">Direkt</option>
+      <option value="Fachlich">Fachlich</option>
+      <option value="Frech">Frech & provokant</option>
+    </select>
+
+    <button type="submit" class="btn">Text generieren</button>
+  </form>
+
+  <div id="ghostwriter-output" class="ghostwriter-output" style="display: none;">
+    <h3>Dein Text:</h3>
+    <textarea id="generated-text" readonly placeholder="Hier erscheint dein Text..."></textarea>
+    <button onclick="copyText()" class="btn">Text kopieren</button>
+    <button id="download-pdf" class="btn">Als PDF herunterladen</button>
+  </div>
+</section>
+
+<!-- === GHOSTWRITER AI LOGIK === -->
+<script>
+  document.getElementById('ghostwriter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const zielgruppe = document.getElementById('zielgruppe').value;
+    const thema = document.getElementById('thema').value;
+    const textart = document.getElementById('textart').value;
+    const stil = document.getElementById('stil').value;
+
+    const text = `Hey ${zielgruppe},
+
+hier ist ein ${stil}er ${textart} zum Thema "${thema}" – perfekt abgestimmt auf deine Zielgruppe:
+
+>> [DEMO-INHALT – KI-Text folgt in Phase 2]
+
+Bleib dran!
+Dein GhostWriter AI`;
+
+    document.getElementById('generated-text').value = text;
+    document.getElementById('ghostwriter-output').style.display = 'block';
+  });
+
+  function copyText() {
+    const textArea = document.getElementById("generated-text");
+    textArea.select();
+    document.execCommand("copy");
+    alert("Text wurde kopiert!");
+  }
+
+  document.getElementById("download-pdf").addEventListener("click", () => {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const output = document.getElementById("generated-text").value;
+
+    if (!output.trim()) {
+      alert("Bitte erst einen Text generieren.");
+      return;
+    }
+
+    doc.setFont("helvetica");
+    doc.setFontSize(12);
+    doc.text(output, 10, 20);
+    doc.save("ghostwriter-ai.pdf");
+  });
+</script>
 <!-- Pakete -->
   <section id="pakete" class="section tools-products">
   <h2 class="section-title">Pakete</h2>
