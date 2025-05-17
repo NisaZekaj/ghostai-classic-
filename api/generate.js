@@ -33,4 +33,3 @@ export default async function handler(req, res) {
     res.status(500).json({ error: "Interner Serverfehler" });
   }
 }
-const apiKey = process.env.OPENAI_API_KEY;
